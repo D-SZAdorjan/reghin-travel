@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+
+  --font-heading: 'Marcellus', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-accent: 'Nunito', sans-serif;
+
+  /* Custom Colors (Historic Elegance) */
+  --color-primary: #C8B191;
+  --color-primary-dark: #6B5B43;
+  --color-primary-light: #F5E9D7;
+
+  --color-secondary: #A89A8B;
+  --color-secondary-dark: #51463B;
+  --color-secondary-light: #E0D6C8;
+
+  --color-accent: #8B6A4F;
+  --color-accent-light: #D7C1B0;
+
+  --color-background: #F9F6F1;
+
+  --color-text-primary: #2E2B26;
+  --color-text-secondary: #5C5245;
+}
+
+@theme inline {
+  /* Fonts */
+  --font-heading: var(--font-marcellus);
+  --font-body: var(--font-lato);
+  --font-accent: var(--font-nunito);
+
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-dark: var(--color-secondary-dark);
+  --color-secondary-light: var(--color-secondary-light);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-background: var(--color-background);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
