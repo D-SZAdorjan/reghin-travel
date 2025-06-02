@@ -1,9 +1,11 @@
 // NextIntl
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from "next-intl/server";
-import {routing} from '@/i18n/routing';
 
-import {notFound} from 'next/navigation';
+import Footer from '@/components/footer/Footer';
+import NavigationBar from '@/components/navigationBar/NavigationBar';
+import { notFound } from 'next/navigation';
 
 export default async function LocaleLayout({
   children,
@@ -20,9 +22,13 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client
   // side is the easiest way to get started
-  const translations = await getMessages();
+  const messages = await getMessages();
  
   return (
-    <NextIntlClientProvider>{children}</NextIntlClientProvider>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <NavigationBar locale={locale}/>
+      {children}
+      <Footer/>
+    </NextIntlClientProvider>
   );
 }

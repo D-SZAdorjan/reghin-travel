@@ -2,5 +2,13 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "NavigationBar": {
+    "webpageLogo": "/images/logos/reghin-travel-logo3.png",
+    "articles": "Articles",
+    "city-history": "City history",
+    "monuments": "Monuments",
+    "churches": "Churches",
+    "trip-suggestions": "Trip suggestions"
   }
 }

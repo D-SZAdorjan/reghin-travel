@@ -1,7 +1,6 @@
 import GridRow from "@/components/general/GridRow";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const NotFoundError = () => {
   return (
@@ -26,11 +25,11 @@ const NotFoundError = () => {
               <div className="realative items-center lg:items-start flex flex-col lg:block w-full h-full p-5 md:p-14 box-border">
                 <h2 className="text-center lg:text-start text-3xl md:text-5xl font-bold text-primary-dark mb-4">
                   {/* Best staycation <br></br> deals */}
-                  Oops! It looks like you're lost.
+                  Oops! It looks like you&aposre lost.
                 </h2>
                 <div className="text-center lg:text-start box-border text-base md:text-lg">
                   {/* Enjoy these cool staycation promotions in Singapore */}
-                  The page you're looking for isn't available. Try to search again or use the go to.
+                  The page you&aposre looking for isn&apost available. Try to search again or use the go to.
                 </div>
                 <Link
                   href="/"
