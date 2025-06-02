@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import HeroBgImage from "@/../public/images/home-hero-ana-landscape.png";
+import Image from 'next/image';
 
 export default function HomeHeroSection(){
   return (

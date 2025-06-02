@@ -1,7 +1,7 @@
-import { allArticles } from 'contentlayer/generated';
 import { routing } from '@/i18n/routing';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { allArticles } from 'contentlayer/generated';
 import Image from 'next/image';
 import Link from 'next/link';
 import GridRow from './general/GridRow';

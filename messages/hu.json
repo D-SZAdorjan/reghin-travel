@@ -2,5 +2,13 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "NavigationBar": {
+    "webpageLogo": "/images/logos/reghin-travel-logo3.png",
+    "articles": "Cikkek",
+    "city-history": "Város történelme",
+    "monuments": "Látványosságok",
+    "churches": "Templomok",
+    "trip-suggestions": "Túra ajánlatok"
   }
 }

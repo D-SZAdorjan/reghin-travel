@@ -1,5 +1,5 @@
-import GridRow from "@/components/general/GridRow";
 import PostCard1 from "@/components/articlesPage/PostCard1";
+import GridRow from "@/components/general/GridRow";
 import { allArticles } from "contentlayer/generated";
 
 export default async function PostList({ locale }: {locale: string}) {
@@ -10,7 +10,13 @@ export default async function PostList({ locale }: {locale: string}) {
         {
           articles.map((article, index) => {
             return (
-              <PostCard1 key={`article-${index}-${article.slug}`}/>
+              <PostCard1 
+              key={`article-${index}-${article.slug}`}
+              cardLink={`trip-suggestions/${article.slug}`}
+              cardCreationDate="2025-01-01"
+              cardTitle={article.title}
+              cardDescription={article.lead ? article.lead : ""}
+              cardAuthor="John Doe"/>
             )
           })
         }

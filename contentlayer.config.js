@@ -96,6 +96,26 @@ export const NotablePersonality = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const TripSuggestion = defineDocumentType(() => ({
+  name: 'TripSuggestion',
+  filePathPattern: `trip-suggestions/**/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    subTitle: { type: 'string', required: false },
+    lead: { type: 'string', required: false },
+    image: { type: 'string', required: true },
+    createDate: { type: 'date', required: true },
+    updateDate: { type: 'date', required: true },
+    category: { type: 'string', required: false },
+    timeToRead: { type: 'number', required: false }, // in minutes
+    priority: { type: 'number', required: false }, // descendent
+    published: { type: 'boolean', required: true },
+  },
+
+  computedFields,
+}))
+
 export const CaseStudy = defineDocumentType(() => ({
   name: 'CaseStudy',
   filePathPattern: `work/**/**/*.mdx`,
@@ -131,7 +151,7 @@ export const CaseStudy = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'src/content',
-  documentTypes: [Article, Monument, Church, NotablePersonality, CaseStudy],
+  documentTypes: [Article, Monument, Church, NotablePersonality, TripSuggestion, CaseStudy],
   mdx: {
     remarkPlugins: [remarkGfm]
   },

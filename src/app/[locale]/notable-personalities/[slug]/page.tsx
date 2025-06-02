@@ -4,7 +4,6 @@
 import GridRow from '@/components/general/GridRow'
 import InnerPageHero from '@/components/general/InnerPageHero'
 import Image from 'next/image'
-import React from 'react'
 
 export default async function NotablePersonalitiesInnerPage(){
   return (

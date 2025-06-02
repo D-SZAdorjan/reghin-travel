@@ -4,13 +4,15 @@ import InfoCardSlider from "@/components/InfoCardSlider";
 import MainArticles from "@/components/MainArticles";
 import NotablePersonalitySection from "@/components/NotablePersonalitySection";
 
-export default async function Home({params}: {params: {locale: string}}) {
-  const {locale} = await params;
+type Params = Promise<{ locale: string }>
+
+export default async function Home({params}: {params: Params}) {
+  const { locale } = await params;
   // const translations = useTranslations('HomePage');
   return (
     <>
       <HomeHeroSection/>
-      <section className="pb-20 relative">
+      <section className="pb-20 relative overflow-hidden">
         <InfoCardSlider locale={locale} />
       </section>
       <ChurchSection locale={locale}/>

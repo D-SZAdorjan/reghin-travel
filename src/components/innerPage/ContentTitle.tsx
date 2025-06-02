@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function ContentTitle({children, size="2xl", count}: {children: React.ReactNode; size?: "lg" | "xl" | "2xl" | string; count?: number}) {
   return (

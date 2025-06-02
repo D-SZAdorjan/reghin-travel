@@ -2,7 +2,6 @@
 // TODO: make content dynamic
 // TODO: add SEO
 import InnerPageHero from '@/components/general/InnerPageHero'
-import React from 'react'
 
 export default async function CityHistoryPage(){
   return (

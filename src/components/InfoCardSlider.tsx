@@ -4,10 +4,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { allMonuments } from "contentlayer/generated";
-import Link from "next/link";
 import GridRow from "@/components/general/GridRow";
 import SwiperSlider from "@/components/general/SwiperSlider";
+import { allMonuments } from "contentlayer/generated";
+import Link from "next/link";
 // import NavigationButton from "./general/NavigationButton";
 
 export default async function InfoCardSlider({ locale = routing.defaultLocale}: {locale: string}){

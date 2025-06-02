@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
+import type { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 
 interface MdxLinkProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   href: string

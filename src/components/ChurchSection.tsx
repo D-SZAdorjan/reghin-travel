@@ -1,9 +1,7 @@
 import placeholderImg from "@/../public/images/placeholder.png";
 import GridRow from "@/components/general/GridRow";
-import { allChurches } from "contentlayer/generated";
 import { routing } from "@/i18n/routing";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { allChurches } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,15 +29,15 @@ export default async function ChurchSection({
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <h2 className="transition duration-[800ms] text-2xl">Churches</h2>
           </div>
-          <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
-            <Link href="/">
+          {/* <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
+            <Link href="/churches">
               <span>See all</span>
               <FontAwesomeIcon
                 icon={faArrowUp}
                 className="ms-2.5 text-base rotate-45"
               />
             </Link>
-          </div>
+          </div> */}
         </GridRow>
         <div className="grid grid-cols-12 grid-rows-2 gap-7 pt-14 transition duration-[800ms] ease">
           {churches.map((church, index) => {

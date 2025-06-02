@@ -1,5 +1,4 @@
 import Image, { ImageProps } from 'next/image';
-import type { FC } from 'react';
 
 interface MdxImageProps extends Omit<ImageProps, 'src' | 'alt'> {
   src: string

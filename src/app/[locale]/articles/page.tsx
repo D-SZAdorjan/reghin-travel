@@ -4,7 +4,9 @@ import SideBar from "@/components/articlesPage/SideBar";
 import GridRow from "@/components/general/GridRow";
 import InnerPageHero from "@/components/general/InnerPageHero";
 
-export default async function BlogsPage({params}: {params: {locale: string}}) {
+type Params = Promise<{ locale: string }>
+
+export default async function BlogsPage({params}: {params: Params}) {
   const {locale} = await params;
   return (
     <>

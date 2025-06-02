@@ -1,30 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-export default async function PostCard1() {
+export default async function PostCard1({cardLink = "/", cardImage, cardImageAlt = "Card Image", cardCreationDate, cardAuthor, cardTitle, cardDescription}: {cardLink: string, cardImage?: string, cardImageAlt?: string, cardCreationDate: string, cardAuthor: string, cardTitle: string, cardDescription: string}) {
   return (
-    <Link href="" className="flex flex-col md:flex-row items-center">
+    <Link href={cardLink} className="flex flex-col md:flex-row items-center mb-8">
       <div className="me-8">
         <Image
           className="object-cover rounded-lg"
-          src="/images/placeholder.png"
+          src={cardImage ? cardImage : "/images/placeholder.png"}
           width={700}
           height={816}
-          alt="Blog Post Image"
+          alt={cardImageAlt}
         />
       </div>
       <div className="mt-3 md:mt-0">
         <div className="flex text-sm gap-x-2.5">
-          <div>April 06 2023</div>
-          <div>By Ali Tufan</div>
+          <div>{cardCreationDate}</div>
+          <div>By {cardAuthor}</div>
         </div>
         <h3 className="mt-2.5 font-semibold text-xl text-text-primary">
-          Kenya vs Tanzania Safari: The Better African Safari Experience
+          {cardTitle}
         </h3>
         <p className="mt-2.5">
-          From creepy coach rides with comedic theatrics to somber strolls
-          through tragic neighborhoods.
+          {cardDescription}
         </p>
         <button className="font-medium mt-2.5 flex items-center">
           <span className="me-2.5">Read More</span>

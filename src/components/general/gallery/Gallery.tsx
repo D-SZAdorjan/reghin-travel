@@ -1,9 +1,9 @@
 "use client";
 
 import { GalleryImage } from "@/components/utils/content-types";
-import ImageLightBox from "./ImageLightBox";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
+import ImageLightBox from "./ImageLightBox";
 const images: GalleryImage[] = [
   {
     id: BigInt(1),

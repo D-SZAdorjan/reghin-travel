@@ -34,10 +34,10 @@ export default function SwiperSlider({
                 modules={[Navigation, Pagination]}
                 className="overflow-visible max-w-full flex [&>.swiper-wrapper]:flex"
                 breakpoints={{
-                  500: {
+                  300: {
                     slidesPerView: 1,
                   },
-                  768: {
+                  450: {
                     slidesPerView: 2,
                   },
                   1024: {

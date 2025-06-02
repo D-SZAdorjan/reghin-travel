@@ -2,18 +2,9 @@
 // TODO: make content dynamic
 // TODO: fix mdx content handling
 // TODO: add SEO
-
 import { MdxContent } from "@/components/contentlayer/MdxContent";
 import GridRow from "@/components/general/GridRow";
-import InfoIconAddress from "@/components/general/InfoIconAddress";
-import InfoIconOpenHours from "@/components/general/InfoIconOpenHours";
-import InfoIconPhone from "@/components/general/InfoIconPhone";
 import InnerPageHero from "@/components/general/InnerPageHero";
-import ContentBlockQuote from "@/components/innerPage/ContentBlockQuote";
-import ContentLabeledImage from "@/components/innerPage/ContentLabeledImage";
-import ContentList from "@/components/innerPage/ContentList";
-import ContentTextBlock from "@/components/innerPage/ContentTextBlock";
-import ContentTitle from "@/components/innerPage/ContentTitle";
 import { routing } from "@/i18n/routing";
 import {
   faFacebookF,
@@ -36,9 +27,10 @@ export const generateStaticParams = async () => {
   return staticParams;
 };
 
-export default async function BlogPostInnerPage({params}: {params: {slug: string, locale: string}}) {
-  const {slug} = await params;
-  const {locale} = await params;
+type Params = Promise<{ slug: string; locale: string }>
+
+export default async function BlogPostInnerPage({ params }: {params: Params}) {
+  const {slug, locale} = await params;
 
   const data = allArticles.find((post) => post.slug === slug && post.locale === locale);
   return (

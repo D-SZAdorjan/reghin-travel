@@ -1,8 +1,7 @@
-import React from "react";
-import GridRow from "@/components/general/GridRow";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDoorOpen, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "@/components/general/gallery/Gallery";
+import GridRow from "@/components/general/GridRow";
+import { faDoorOpen, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default async function GalleryHero() {
   return (
