@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const TripSuggestionCard = ({cardBadgeText, cardImage = "/images/placeholder.png", cardImageAlt = "Trip Suggestion Card Image", cardDate, cardAuthor, cardTitle}: {cardBadgeText: string, cardImage: string, cardImageAlt: string, cardDate: string, cardAuthor: string, cardTitle: string}) => {
+const TripSuggestionCard = ({cardLink = "/", cardBadgeText, cardImage = "/images/placeholder.png", cardImageAlt = "Trip Suggestion Card Image", cardDate, cardAuthor, cardTitle}: {cardLink?: string, cardBadgeText: string, cardImage: string, cardImageAlt: string, cardDate: string, cardAuthor: string, cardTitle: string}) => {
   return (
     <div className="flex-[0_0_auto] py-4 w-full md:w-1/2 lg:w-1/3 box-border max-w-full px-[calc(30px*0.5)]">
-      <Link href="" className="block group/move-info">
+      <Link href={`/trip-suggestions/${cardLink}`} className="block group/move-info">
         <div className="relative before:pb-[73%] before:block before:w-full block overflow-hidden">
           <Image
             src={cardImage}

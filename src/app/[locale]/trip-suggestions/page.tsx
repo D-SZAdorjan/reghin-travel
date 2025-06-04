@@ -31,12 +31,13 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
                   tripSuggestions.map((tripSuggestion, index) => (
                     <TripSuggestionCard
                       key={index}
+                      cardLink={tripSuggestion.slug}
                       cardBadgeText="Trip Suggestion"
-                      cardImage={`/images/placeholder/${index + 1}.jpg`}
+                      cardImage={tripSuggestion.image}
                       cardImageAlt="Trip Suggestion Card Image"
                       cardDate="April 06 2023"
                       cardAuthor="Ali Tufan"
-                      cardTitle="Kenya vs Tanzania Safari: The Better African Safari Experience"
+                      cardTitle={tripSuggestion.title}
                     />
                   ))
                 }

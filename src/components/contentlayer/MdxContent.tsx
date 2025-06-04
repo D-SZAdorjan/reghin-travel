@@ -7,6 +7,7 @@ import ContentLabeledImage from "@/components/innerPage/ContentLabeledImage";
 import ContentList from "@/components/innerPage/ContentList";
 import ContentTextBlock from "@/components/innerPage/ContentTextBlock";
 import ContentTitle from "@/components/innerPage/ContentTitle";
+import CheckpointComponent from "@/components/tripSuggestionsPage/CheckpointComponent";
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { MdxImage } from './MdxImage';
 import { MdxLink } from './MdxLink';
@@ -26,7 +27,8 @@ const mdxComponents = {
   ContentLabeledImage: ContentLabeledImage,
   InfoIconOpenHours: InfoIconOpenHours,
   InfoIconAddress: InfoIconAddress,
-  InfoIconPhone: InfoIconPhone
+  InfoIconPhone: InfoIconPhone,
+  CheckpointComponent: CheckpointComponent
 }
 
 export function MdxContent({ code } : MdxContentProps) {

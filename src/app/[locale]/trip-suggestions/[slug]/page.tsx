@@ -5,16 +5,18 @@
 import { MdxContent } from "@/components/contentlayer/MdxContent";
 import GridRow from "@/components/general/GridRow";
 import InnerPageHero from "@/components/general/InnerPageHero";
+import CheckpointComponent from "@/components/tripSuggestionsPage/CheckpointComponent";
 import { routing } from "@/i18n/routing";
 import { faFacebookF, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFlag, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { allArticles } from "contentlayer/generated";
+import { allTripSuggestions } from "contentlayer/generated";
 import Link from "next/link";
 
 export const generateStaticParams = async () => {
   // Generate static parameters for all combinations of locales and slugs
   const staticParams = routing.locales.flatMap((locale) =>
-    allArticles.map((post) => ({
+    allTripSuggestions.map((post) => ({
       locale,
       slug: post.slug,
     }))
@@ -28,7 +30,7 @@ type Params = Promise<{ slug: string; locale: string }>
 export default async function TripSuggestionsInnerPage({params}: {params: Params}) {
   const {slug, locale} = await params;
 
-  const data = allArticles.find((post) => post.slug === slug && post.locale === locale);
+  const data = allTripSuggestions.find((post) => post.slug === slug && post.locale === locale);
   return (
     <>
       <InnerPageHero
@@ -134,7 +136,10 @@ export default async function TripSuggestionsInnerPage({params}: {params: Params
                         href=""
                         className="flex justify-center items-center w-10 h-10 rounded-full bg-orange-500/5 text-center text-sm"
                       >
-                        <FontAwesomeIcon className="text-sm" icon={faXTwitter} />
+                        <FontAwesomeIcon
+                          className="text-sm"
+                          icon={faXTwitter}
+                        />
                       </Link>
                     </div>
 
