@@ -5,10 +5,8 @@
 import { MdxContent } from "@/components/contentlayer/MdxContent";
 import GridRow from "@/components/general/GridRow";
 import InnerPageHero from "@/components/general/InnerPageHero";
-import CheckpointComponent from "@/components/tripSuggestionsPage/CheckpointComponent";
 import { routing } from "@/i18n/routing";
 import { faFacebookF, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faFlag, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { allTripSuggestions } from "contentlayer/generated";
 import Link from "next/link";
