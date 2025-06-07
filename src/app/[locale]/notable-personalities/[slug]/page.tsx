@@ -1,26 +1,50 @@
 // TODO: pick matching colors
 // TODO: make content dynamic
 // TODO: add SEO
+import { MdxContent } from '@/components/contentlayer/MdxContent';
 import GridRow from '@/components/general/GridRow'
 import InnerPageHero from '@/components/general/InnerPageHero'
+import { routing } from '@/i18n/routing';
+import { allNotablePersonalities } from 'contentlayer/generated';
 import Image from 'next/image'
+import { notFound } from 'next/navigation';
 
-export default async function NotablePersonalitiesInnerPage(){
+export const generateStaticParams = async () => {
+  // Generate static parameters for all combinations of locales and slugs
+  const staticParams = routing.locales.flatMap((locale) =>
+    allNotablePersonalities.map((post) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
+
+  return staticParams;
+};
+
+type Params = Promise<{ slug: string; locale: string }>;
+
+export default async function NotablePersonalitiesInnerPage({params}: {params: Params}){
+  const {slug, locale} = await params;
+  const notablePersonality = allNotablePersonalities.find((post) => post.slug === slug && post.locale === locale);
+  if(!notablePersonality){
+    notFound();
+  }
   return (
     <>
-    <InnerPageHero heroTitle="Person 1" heroImg="/img/home-hero-ana-landscape.png"/>
+    <InnerPageHero heroTitle={`${notablePersonality?.firstName} ${notablePersonality?.lastName}`} heroImg={notablePersonality?.heroImage ? notablePersonality.heroImage : "/images/placeholder.png"}/>
     <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
         <GridRow>
           <div className="w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
+              <MdxContent code={notablePersonality?.body.code || ""} />
               {/* Styled Title Start */}
-              <h2 className="text-2xl md:text-3xl font-bold mb-5">
+              {/* <h2 className="text-2xl md:text-3xl font-bold mb-5">
                 The Brazen Head
-              </h2>
+              </h2> */}
               {/* Styled Title End */}
 
               {/* Text Bloxk Start */}
-              <p className="text-sm leading-7 my-5">
+              {/* <p className="text-sm leading-7 my-5">
                 Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
                 Diam phasellus vestibulum lorem sed risus ultricies. Magna sit
                 amet purus gravida quis blandit. Arcu cursus vitae congue
@@ -30,11 +54,11 @@ export default async function NotablePersonalitiesInnerPage(){
                 at lectus urna duis convallis convallis tellus. Sit amet mauris
                 commodo quis imperdiet massa. Vitae congue eu consequat ac
                 felis.
-              </p>
+              </p> */}
               {/* Text Block End */}
 
               {/* Styled List Start */}
-              <ul className="my-5 ps-2">
+              {/* <ul className="my-5 ps-2">
                 <li className="text-sm leading-7 m-0 before:inline-block before:w-1.5 before:h-1.5 before:bg-orange-500 before:rounded-full before:me-2.5 before:mb-1 before:align-middle">
                   Sed viverra ipsum nunc aliquet bibendum enim facilisis
                   gravida.
@@ -50,11 +74,11 @@ export default async function NotablePersonalitiesInnerPage(){
                   Bibendum est ultricies integer quis. Semper eget duis at
                   tellus.
                 </li>
-              </ul>
+              </ul> */}
               {/* Styled List End */}
 
               {/* Styled Blockquote Start */}
-              <blockquote className="my-5 flex rounded-lg bg-orange-500/5 px-8 py-8">
+              {/* <blockquote className="my-5 flex rounded-lg bg-orange-500/5 px-8 py-8">
                 <div className="me-5">
                   <svg
                     width="37"
@@ -75,10 +99,10 @@ export default async function NotablePersonalitiesInnerPage(){
                   Magna sit amet purus gravida quis blandit. Arcu cursus vitae
                   congue mauris.“
                 </div>
-              </blockquote>
+              </blockquote> */}
               {/* Styled Blockquote End */}
 
-              <p className="text-sm leading-7 my-5">
+              {/* <p className="text-sm leading-7 my-5">
                 Donec purus posuere nullam lacus aliquam egestas arcu. A egestas
                 a, tellus massa, ornare vulputate. Erat enim eget laoreet
                 ullamcorper lectus aliquet nullam tempus id. Dignissim convallis
@@ -98,40 +122,40 @@ export default async function NotablePersonalitiesInnerPage(){
                 fermentum fermentum sem consectetur. Consectetur eleifend aenean
                 eu neque euismod amet parturient turpis vitae. Faucibus ipsum
                 felis et duis fames.
-              </p>
+              </p> */}
 
-              <GridRow>
-                <div className="flex-[0_0_auto] w-full pb-4 md:pb-0 md:w-1/2 px-4">
+              {/* <GridRow>
+                <div className="flex-[0_0_auto] w-full pb-4 md:pb-0 md:w-1/2 px-4"> */}
                   {/* Styled Image Component with Image Title Start */}
-                  <Image
+                  {/* <Image
                     className="rounded-lg"
-                    src="/img/test-blog.png"
+                    src="/images/placeholder/1.jpg"
                     width={880}
                     height={880}
                     alt="Image"
                   />
                   <div className="mt-1.5 text-sm italic">
                     Donec purus posuere nullam lacus aliquam.
-                  </div>
+                  </div> */}
                   {/* Styled Image Component with Image Title End */}
-                </div>
-                <div className="flex-[0_0_auto] w-full md:w-1/2 px-4">
+                {/* </div>
+                <div className="flex-[0_0_auto] w-full md:w-1/2 px-4"> */}
                   {/* Styled Image Component with Image Title Start */}
-                  <Image
+                  {/* <Image
                     className="rounded-lg"
-                    src="/img/test-blog.png"
+                    src="/images/placeholder/2.jpg"
                     width={880}
                     height={880}
                     alt="Image"
                   />
                   <div className="mt-1.5 text-sm italic">
                     Donec purus posuere nullam lacus aliquam.
-                  </div>
+                  </div> */}
                   {/* Styled Image Component with Image Title End */}
-                </div>
-              </GridRow>
+                {/* </div>
+              </GridRow> */}
 
-              <p className="text-sm leading-7 my-5">
+              {/* <p className="text-sm leading-7 my-5">
                 Donec purus posuere nullam lacus aliquam egestas arcu. A egestas
                 a, tellus massa, ornare vulputate. Erat enim eget laoreet
                 ullamcorper lectus aliquet nullam tempus id. Dignissim convallis
@@ -152,7 +176,7 @@ export default async function NotablePersonalitiesInnerPage(){
                 fermentum fermentum sem consectetur. Consectetur eleifend aenean
                 eu neque euismod amet parturient turpis vitae. Faucibus ipsum
                 felis et duis fames.
-              </p>
+              </p> */}
             </div>
           </div>
         </GridRow>

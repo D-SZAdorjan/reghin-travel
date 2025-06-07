@@ -10,6 +10,7 @@ import { faFacebookF, faInstagram, faXTwitter } from "@fortawesome/free-brands-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { allTripSuggestions } from "contentlayer/generated";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const generateStaticParams = async () => {
   // Generate static parameters for all combinations of locales and slugs
@@ -29,6 +30,9 @@ export default async function TripSuggestionsInnerPage({params}: {params: Params
   const {slug, locale} = await params;
 
   const data = allTripSuggestions.find((post) => post.slug === slug && post.locale === locale);
+  if(!data){
+      notFound();
+  }
   return (
     <>
       <InnerPageHero

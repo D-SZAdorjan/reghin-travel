@@ -86,7 +86,8 @@ export const NotablePersonality = defineDocumentType(() => ({
     firstName: { type: 'string', required: true },
     lastName: { type: 'string', required: true },
     occupation: { type: 'string', required: true },
-    image: { type: 'string', required: true },
+    heroImage: { type: 'string', required: true },
+    coverImage: { type: 'string', required: false },
     createDate: { type: 'date', required: true },
     updateDate: { type: 'date', required: true },
     priority: { type: 'number', required: false }, // descendent

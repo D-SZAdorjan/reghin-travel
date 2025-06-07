@@ -39,7 +39,7 @@ export default async function NotablePersonalitySection({ locale = routing.defau
                     <Image
                       width={450}
                       height={600}
-                      src={person.image ? person.image : placeholderImg}
+                      src={person.heroImage ? person.heroImage : placeholderImg}
                       alt="image"
                       className="img-ratio aspect-[9/12] object-cover group-hover:scale-150 transition duration-700 ease-in-out"
                     />
