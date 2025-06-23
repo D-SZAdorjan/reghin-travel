@@ -8,7 +8,7 @@ import GridRow from './general/GridRow';
 
 
 export default async function MainArticles({ locale = routing.defaultLocale }: { locale?: string }){
-  const articles = allArticles.filter((article) => article.locale === locale).slice(0, 2);
+  const articles = allArticles.filter((article) => article.locale === locale && article.showOnHomePage && article.showOnHomePage === true).slice(0, 2);
   return (
     <section className="pb-20">
       <div className="container mx-auto">
@@ -33,7 +33,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
             <div className="relative h-full z-0 box-border">
               <div className="absolute top-0 left-0 w-full h-full z-[-1] box-border">
                 <Image
-                  src={articles[0].image ? articles[0].image as string : "/img/placeholder_dark.png"}
+                  src={articles[0].coverImage ? articles[0].coverImage : "/images/placeholder.png"}
                   width={630}
                   height={401}
                   alt="image"
@@ -50,7 +50,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
                   {articles[0].title}
                 </h4>
                 <Link
-                  href="/"
+                  href={`/articles/${articles[0].slug}`}
                   className="mt-20 py-4 px-9 cursor-pointer bg-white flex items-center justify-center text-center text-sm font-medium rounded-xl border border-transparent transition duration-300 ease-[cubic-bezier(.165,.84,.44,1)] w-fit"
                 >
                   See activities
@@ -64,7 +64,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
             <div className="relative h-full z-0 box-border">
               <div className="absolute top-0 left-0 w-full h-full z-[-1] box-border">
                 <Image
-                  src={articles[1].image ? articles[1].image as string : "/img/placeholder_dark.png"}
+                  src={articles[1].coverImage ? articles[1].coverImage as string : "/images/placeholder.png"}
                   width={630}
                   height={401}
                   alt="image"
@@ -81,7 +81,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
                   {articles[1].title}
                 </h4>
                 <Link
-                  href="/"
+                  href={`/articles/${articles[1].slug}`}
                   className="mt-20 py-4 px-9 cursor-pointer bg-white flex items-center justify-center text-center text-sm font-medium rounded-xl border border-transparent transition duration-300 ease-[cubic-bezier(.165,.84,.44,1)] w-fit"
                 >
                   See activities

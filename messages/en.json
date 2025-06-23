@@ -1,8 +1,4 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
   "NavigationBar": {
     "webpageLogo": "/images/logos/reghin-travel-logo3.png",
     "articles": "Articles",
@@ -10,5 +6,23 @@
     "monuments": "Monuments",
     "churches": "Churches",
     "trip-suggestions": "Trip suggestions"
+  },
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "ArticlesPage": {
+    "Sidebar": {
+      "title": "Most recent articles"
+    },
+    "Cards": {
+      "buttonText": "Read more",
+      "byText": "By"
+    },
+    "Pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pagintionInfoText": "Showing articles {articleNumber} of {totalArticles}"
+    }
   }
 }
