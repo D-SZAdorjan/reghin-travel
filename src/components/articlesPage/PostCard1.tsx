@@ -1,12 +1,14 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function PostCard1({cardLink = "/", cardImage, cardImageAlt = "Card Image", cardCreationDate, cardAuthor, cardTitle, cardDescription}: {cardLink: string, cardImage?: string, cardImageAlt?: string, cardCreationDate: string, cardAuthor: string, cardTitle: string, cardDescription: string}) {
+export default async function PostCard1({cardLink = "/", cardImage, imageWidth = "", cardImageAlt = "Card Image", cardCreationDate, cardAuthor, cardTitle, cardDescription}: {cardLink: string, cardImage?: string, imageWidth?: string, cardImageAlt?: string, cardCreationDate: string, cardAuthor: string, cardTitle: string, cardDescription: string}) {
+  const translations = await getTranslations('ArticlesPage');
   return (
     <Link href={cardLink} className="flex flex-col md:flex-row items-center mb-8">
-      <div className="me-8">
+      <div className={`me-8 ${imageWidth}`}>
         <Image
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg aspect-5/4"
           src={cardImage ? cardImage : "/images/placeholder.png"}
           width={700}
           height={816}
@@ -16,7 +18,7 @@ export default async function PostCard1({cardLink = "/", cardImage, cardImageAlt
       <div className="mt-3 md:mt-0">
         <div className="flex text-sm gap-x-2.5">
           <div>{cardCreationDate}</div>
-          <div>By {cardAuthor}</div>
+          { cardAuthor && cardAuthor !== "" && <div>{translations('Cards.byText')} {cardAuthor}</div>}
         </div>
         <h3 className="mt-2.5 font-semibold text-xl text-text-primary">
           {cardTitle}
@@ -25,7 +27,7 @@ export default async function PostCard1({cardLink = "/", cardImage, cardImageAlt
           {cardDescription}
         </p>
         <button className="font-medium mt-2.5 flex items-center">
-          <span className="me-2.5">Read More</span>
+          <span className="me-2.5">{translations('Cards.buttonText')}</span>
           <svg
             width="16"
             height="16"
