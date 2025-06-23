@@ -1,8 +1,6 @@
 import PostCard1 from "@/components/articlesPage/PostCard1";
 import GridRow from "@/components/general/GridRow";
 import { Article } from "contentlayer/generated";
-import { get } from "http";
-import { useFormatter } from "next-intl";
 import { getFormatter } from "next-intl/server";
 
 
