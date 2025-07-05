@@ -13,8 +13,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import MobileSideNav from "./MobileSideNav";
+import { usePathname } from "next/navigation";
 
 const NavigationBar = ({ locale }: { locale: string }) => {
+
+  const pathName = usePathname();
+
+  const transparentNav: string[] = [
+    "/",
+    "/en",
+    "/hu"
+  ];
 
   const pages: string[] = [
       "articles",
@@ -65,7 +74,7 @@ const NavigationBar = ({ locale }: { locale: string }) => {
   return (
     <header
       className={`fixed top-0 start-0 right-0 z-50 ${
-        scrollY > 50
+        scrollY > 50 || !transparentNav.includes(pathName)
           ? "bg-primary-light border-b-2 border-primary border-solid shadow-md"
           : "bg-transparent"
       } transition duration-200`}
@@ -186,7 +195,7 @@ const NavigationBar = ({ locale }: { locale: string }) => {
           <div className="">
             <div
               className={`relative flex ${
-                scrollY > 50 ? "text-primary-dark" : "text-primary-light"
+                scrollY > 50 || !transparentNav.includes(pathName) ? "text-primary-dark" : "text-primary-light"
               }`}
             >
               {pages.map((page, index) => (
@@ -215,8 +224,8 @@ const NavigationBar = ({ locale }: { locale: string }) => {
         </div>
         {/* <div className=""></div> */}
         <div className="header-right flex items-center">
-          <div className={`font-bold ${scrollY > 50 ? "text-primary-dark" : "text-primary-light"}`}>
-            <div className={`relative font-bold ${scrollY > 50 ? "text-primary-dark" : "text-primary-light"}`}>
+          <div className={`font-bold ${scrollY > 50 || !transparentNav.includes(pathName) ? "text-primary-dark" : "text-primary-light"}`}>
+            <div className={`relative font-bold ${scrollY > 50 || !transparentNav.includes(pathName) ? "text-primary-dark" : "text-primary-light"}`}>
               <div
                 className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]"
                 onClick={toggleDropdown}
@@ -253,12 +262,12 @@ const NavigationBar = ({ locale }: { locale: string }) => {
           </div>
           <div
             className={`font-bold md:hidden ${
-              scrollY > 50 ? "text-primary-dark" : "text-primary-light"
+              scrollY > 50 || !transparentNav.includes(pathName) ? "text-primary-dark" : "text-primary-light"
             }`}
           >
             <div
               className={`relative font-bold ${
-                scrollY > 50 ? "text-primary-dark" : "text-primary-light"
+                scrollY > 50 || !transparentNav.includes(pathName) ? "text-primary-dark" : "text-primary-light"
               }`}
             >
               <div
