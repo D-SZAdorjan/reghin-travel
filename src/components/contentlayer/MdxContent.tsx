@@ -8,12 +8,13 @@ import ContentList from "@/components/innerPage/ContentList";
 import ContentTextBlock from "@/components/innerPage/ContentTextBlock";
 import ContentTitle from "@/components/innerPage/ContentTitle";
 import CheckpointComponent from "@/components/tripSuggestionsPage/CheckpointComponent";
-import { useMDXComponent } from 'next-contentlayer2/hooks';
-import { MdxImage } from './MdxImage';
-import { MdxLink } from './MdxLink';
+import ContentAdditionalInfo from "@/components/innerPage/ContentAdditionalInfo";
+import { useMDXComponent } from "next-contentlayer2/hooks";
+import { MdxImage } from "./MdxImage";
+import { MdxLink } from "./MdxLink";
 
 interface MdxContentProps {
-  code: string
+  code: string;
 }
 
 const mdxComponents = {
@@ -28,11 +29,12 @@ const mdxComponents = {
   InfoIconOpenHours: InfoIconOpenHours,
   InfoIconAddress: InfoIconAddress,
   InfoIconPhone: InfoIconPhone,
-  CheckpointComponent: CheckpointComponent
-}
+  CheckpointComponent: CheckpointComponent,
+  ContentAdditionalInfo: ContentAdditionalInfo,
+};
 
-export function MdxContent({ code } : MdxContentProps) {
-    const Component = useMDXComponent(code)
-  
-    return <Component components={{ ...mdxComponents }} />
+export function MdxContent({ code }: MdxContentProps) {
+  const Component = useMDXComponent(code);
+
+  return <Component components={{ ...mdxComponents }} />;
 }

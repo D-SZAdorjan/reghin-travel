@@ -1,6 +1,5 @@
 "use client"
 
-import { GalleryImage } from "@/components/utils/content-types";
 import Image from "next/image";
 
 export default function ImageLightBox({
@@ -9,7 +8,7 @@ export default function ImageLightBox({
     setActiveLightBox,
     currentSlideIndex,
     setCurrentSlideIndex}:{
-        images: GalleryImage[],
+        images: string[],
         activeLightBox: boolean,
         setActiveLightBox: React.Dispatch<React.SetStateAction<boolean>>,
         currentSlideIndex: number,
@@ -47,7 +46,7 @@ export default function ImageLightBox({
             className="h-full w-full object-contain m-auto bg-transparent"
               width={850}
               height={510}
-              src={elm.imageUrl}
+              src={elm}
               alt="image"
             />
           </div>

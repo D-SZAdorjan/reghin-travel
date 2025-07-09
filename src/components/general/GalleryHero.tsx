@@ -3,22 +3,31 @@ import GridRow from "@/components/general/GridRow";
 import { faDoorOpen, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default async function GalleryHero() {
+const categories = ["Church", "Monument"];
+
+export default async function GalleryHero({title = "", address = "", visitHours = "", images = []}: {title?: string, address?: string, visitHours?: string, images?: string[]}) {
   return (
     <>
-      <section className="w-full md:w-11/12 flex mx-auto mt-20">
+      <section className="w-full md:w-11/12 flex mx-auto mt-30">
         <GridRow>
           <div className="flex-[0_0_auto] w-full px-8 md:px-4">
             <div className="flex items-center justify-start">
-              <span className="rounded-3xl hover:text-primary-dark hover:cursor-pointer text-sm font-medium bg-primary-light px-4 py-1.5 me-3">
+              {
+                categories.map((category, index) => (
+                  <span key={`category-${index}`} className="rounded-3xl hover:text-primary-dark hover:cursor-pointer text-sm font-medium bg-primary-light px-4 py-1.5 me-3">
+                    {category}
+                  </span>
+                ))
+              }
+              {/* <span className="rounded-3xl hover:text-primary-dark hover:cursor-pointer text-sm font-medium bg-primary-light px-4 py-1.5 me-3">
                 Church
               </span>
               <span className="rounded-3xl hover:text-primary-dark hover:cursor-pointer text-sm font-medium bg-primary-light px-4 py-1.5">
                 Monument
-              </span>
+              </span> */}
             </div>
             <h1 className="mt-5 text-2xl text-primary-dark sm:text-3xl md:text-4xl xl:text-5xl font-bold m-0">
-              Molokini and Turtle Town Snorkeling Adventure Aboard
+              {title}
             </h1>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start pt-5">
               <div className="flex items-center text-text-secondary text-base font-semibold mb-0">
@@ -28,7 +37,7 @@ export default async function GalleryHero() {
                   icon={faLocationDot}
                   size="xs"
                 />
-                Reghin, Str. Iernuteni nr. 65
+                {address}
               </div>
               <div className="flex items-center text-text-secondary ext-base font-semibold mb-0 sm:ms-5">
                 <FontAwesomeIcon
@@ -37,15 +46,15 @@ export default async function GalleryHero() {
                   icon={faDoorOpen}
                   size="xs"
                 />
-                Visitable on weekdays
+                {visitHours}
               </div>
             </div>
           </div>
         </GridRow>
       </section>
-      <section className="w-full md:w-11/12 flex mx-auto">
-        <Gallery />
-      </section>
+      {images.length > 0 && <section className="w-full md:w-11/12 flex mx-auto">
+        <Gallery images={images}/>
+      </section>}
     </>
   );
 }

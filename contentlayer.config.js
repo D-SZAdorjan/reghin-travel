@@ -45,7 +45,9 @@ export const Monument = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     name: { type: 'string', required: true },
-    image: { type: 'string', required: true },
+    coverImage: { type: 'string', required: true },
+    heroImage: { type: 'string', required: false },
+    imageGallery: { type: 'list', of: { type: 'string' }, required: false },
     category: { type: 'string', required: true },
     openHours: { type: 'string', required: false },
     address: { type: 'string', required: true },
