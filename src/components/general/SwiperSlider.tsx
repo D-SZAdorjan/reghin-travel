@@ -51,14 +51,14 @@ export default function SwiperSlider({
                 {data.map((item, index) => (
                   <SwiperSlide key={`card-${index}-${item.slug}`}>
                     <Link
-                      href="/"
+                      href={`/monuments/${item.slug}`}
                       className="tour-card transition duration-150 block rounded-2xl overflow-hidden bg-primary-light hover:shadow-md"
                     >
                       <div className="tour-card-header relative box-border">
                         <div className="tour-card-image relative z-0 overflow-hidden block before:w-full before:block before:pb-[71.42857%]">
                           <Image
                             className="absolute top-0 start-0 w-full h-full object-cover"
-                            src={item.image ? item.image : placeholderImg}
+                            src={item.coverImage ? item.coverImage : placeholderImg}
                             width={421}
                             height={301}
                             alt="Card Image"

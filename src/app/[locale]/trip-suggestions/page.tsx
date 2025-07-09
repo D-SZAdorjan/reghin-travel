@@ -41,7 +41,7 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
                     />
                   ))
                 }
-                {
+                {/* {
                   tripSuggestions.map((tripSuggestion, index) => (
                     <TripSuggestionCard
                       key={index}
@@ -53,7 +53,7 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
                       cardTitle="Kenya vs Tanzania Safari: The Better African Safari Experience"
                     />
                   ))
-                }
+                } */}
                   
                   {/* <TripSuggestionCard
                     cardBadgeText="Trip Suggestion"
@@ -100,7 +100,7 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
             </div>
           </div>
         </div>
-        <Pagination/>
+        {tripSuggestions.length > 9 && <Pagination/>}
       </section>
     </>
   );

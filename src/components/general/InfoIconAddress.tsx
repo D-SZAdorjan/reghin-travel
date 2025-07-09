@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function InfoIconAddress({title, address, mapLink, className}: {title: string; address: string; mapLink: string, className?: string}) {
   return (
     <div className={`flex items-center text-left w-full px-2.5 p-2.5 ${className}`}>
-        <div className="flex justify-center items-center rounded-lg bg-primary-light w-12 h-12 shrink-0">
+        <div className="flex justify-center items-center rounded-lg text-primary-dark bg-primary-light w-12 h-12 shrink-0">
             <FontAwesomeIcon icon={faMapLocation} size='lg'/>
         </div>
         {mapLink ?<Link href={ mapLink } className="ms-2.5 text-left">

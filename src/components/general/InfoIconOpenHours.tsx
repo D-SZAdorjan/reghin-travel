@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function InfoIconOpenHours({title, openHours, className}: {title: string; openHours: string, className?: string}) {
   return (
     <div className={`flex items-center text-left w-full px-2.5 p-2.5 ${className}`}>
-        <div className="flex justify-center items-center rounded-lg bg-primary-light w-12 h-12 shrink-0">
+        <div className="flex justify-center items-center rounded-lg text-primary-dark bg-primary-light w-12 h-12 shrink-0">
             <FontAwesomeIcon icon={faDoorOpen} size='lg'/>
         </div>
         <div className="ms-2.5 text-left">
