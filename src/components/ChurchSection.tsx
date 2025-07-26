@@ -1,7 +1,7 @@
 import placeholderImg from "@/../public/images/placeholder.png";
 import GridRow from "@/components/general/GridRow";
 import { routing } from "@/i18n/routing";
-import { allChurches } from "contentlayer/generated";
+import { allMonuments } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +20,7 @@ export default async function ChurchSection({
   locale?: string;
 }) {
   
-  const churches = allChurches.filter((church) => church.locale === locale);
+  const churches = allMonuments.filter((church) => church.locale === locale && church.category === "church");
   
   return (
     <section className="pb-20">
@@ -52,7 +52,7 @@ export default async function ChurchSection({
                     width={780}
                     height={780}
                     style={{ objectFit: "cover" }}
-                    src={church.image ? church.image : placeholderImg}
+                    src={church.coverImage ? church.coverImage : placeholderImg}
                     alt="Monument Image"
                     className="object-cover w-full h-full transition duration-700 max-w-full align-middle box-border group-hover:scale-125"
                   ></Image>

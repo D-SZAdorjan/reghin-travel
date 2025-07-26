@@ -62,27 +62,6 @@ export const Monument = defineDocumentType(() => ({
   computedFields,
 }))
 
-export const Church = defineDocumentType(() => ({
-  name: 'Church',
-  filePathPattern: `churches/**/**/*.mdx`,
-  contentType: 'mdx',
-  fields: {
-    name: { type: 'string', required: true },
-    image: { type: 'string', required: true },
-    category: { type: 'string', required: true },
-    openHours: { type: 'string', required: false },
-    address: { type: 'string', required: true },
-    contactInfo: { type: 'string', required: false },
-    isVisitable: { type: 'boolean', required: false },
-    createDate: { type: 'date', required: true },
-    updateDate: { type: 'date', required: true },
-    priority: { type: 'number', required: false }, // descendent
-    published: { type: 'boolean', required: true },
-  },
-
-  computedFields,
-}))
-
 export const NotablePersonality = defineDocumentType(() => ({
   name: 'NotablePersonality',
   filePathPattern: `notable-personalities/**/**/*.mdx`,
@@ -157,7 +136,7 @@ export const CaseStudy = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'src/content',
-  documentTypes: [Article, Monument, Church, NotablePersonality, TripSuggestion, CaseStudy],
+  documentTypes: [Article, Monument, NotablePersonality, TripSuggestion, CaseStudy],
   mdx: {
     remarkPlugins: [remarkGfm]
   },

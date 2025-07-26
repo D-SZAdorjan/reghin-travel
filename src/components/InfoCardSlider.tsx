@@ -11,7 +11,7 @@ import Link from "next/link";
 // import NavigationButton from "./general/NavigationButton";
 
 export default async function InfoCardSlider({ locale = routing.defaultLocale}: {locale: string}){
-  const monuments = allMonuments.filter((monument) => monument.locale === locale);
+  const monuments = allMonuments.filter((monument) => monument.locale === locale && monument.category !== "church").sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
   return (
     <div className="container mx-auto">
       <GridRow>
