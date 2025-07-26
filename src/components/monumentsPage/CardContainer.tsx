@@ -1,11 +1,10 @@
 import GridRow from '@/components/general/GridRow'
-import MonumentCard from './MonumentCard'
 import { Monument } from 'contentlayer/generated'
-import Pagination from '@/components/articlesPage/Pagination'
+import MonumentCard from './MonumentCard'
 
 const CardContainer = ({monuments = []} : {monuments?: Monument[]}) => {
   return (
-    <section className="pb-20">
+    <section className="pb-5">
       <div className="container mx-auto">
         <GridRow className="w-11/12 mx-auto px-4 sm:px-8 mt-20">
         {monuments.map((monument, index) => (
@@ -48,7 +47,7 @@ const CardContainer = ({monuments = []} : {monuments?: Monument[]}) => {
                 cardPrice="300"
             /> */}
         </GridRow>
-        { monuments.length > 6 && <Pagination/>}
+        {/* { monuments.length > 6 && <Pagination/>} */}
       </div>
     </section>
   )
