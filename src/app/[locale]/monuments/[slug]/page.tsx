@@ -41,9 +41,9 @@ export default async function MonumentsInnerPage({ params }: {params: Params}) {
   return (
     <>
       <GalleryHero
-      title="Molokini and Turtle Town Snorkeling Adventure Aboard"
-      address="Strada Vînătorilor 51, Reghin 545300"
-      visitHours="8AM - 6PM weekdays"
+      title={data.name}
+      address={data.address}
+      visitHours={data.openHoursShort || data.openHours || ""}
       images={data.imageGallery}/>
       <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
         <GridRow>
