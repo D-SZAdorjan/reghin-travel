@@ -110,7 +110,7 @@ export default function Pagination({totalPages = 0, pageSize = 6, itemCount}: {t
           </div>}
       </div>
       <div className="text-sm text-center mt-5">
-        Showing results { String(currentPage * Number(pageSize) - Number(pageSize) + 1 )}-{String(pageSize)} of {String(itemCount)}
+        Showing results { String(currentPage * Number(pageSize) - Number(pageSize) + 1 )}-{String(Math.min(Number(pageSize) * currentPage, Number(itemCount) + 1))} of {String(Number(itemCount) + 1)}
       </div>
     </div>
   );
