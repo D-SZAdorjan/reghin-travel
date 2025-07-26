@@ -50,6 +50,7 @@ export const Monument = defineDocumentType(() => ({
     imageGallery: { type: 'list', of: { type: 'string' }, required: false },
     category: { type: 'string', required: true },
     openHours: { type: 'string', required: false },
+    openHoursShort: { type: 'string', required: false },
     address: { type: 'string', required: true },
     contactInfo: { type: 'string', required: false },
     isVisitable: { type: 'boolean', required: false },
