@@ -44,7 +44,7 @@ export default async function MonumentsInnerPage({ params }: {params: Params}) {
       title={data.name}
       address={data.address}
       visitHours={data.openHoursShort || data.openHours || ""}
-      images={data.imageGallery}/>
+      images={data.imageGallery && data.imageGallery.length > 0 ? data.imageGallery : [data.heroImage!]}/>
       <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
         <GridRow>
           <div className="w-11/12 mx-auto px-4 sm:px-8">

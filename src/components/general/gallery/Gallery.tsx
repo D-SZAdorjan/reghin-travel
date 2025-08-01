@@ -20,7 +20,7 @@ export default function Gallery({images = []}: {images?: string[]}) {
               onClick={() => handleImagePopUp(0)}
               className={`${images.length > 1 ? "col-span-3" : "col-span-5"} row-span-2 w-full h-full hover:cursor-pointer`}>
           <Image
-            className={`w-full h-full object-cover ${images.length > 1 ? "rounded-s-lg" : "rounded-lg"}`}
+            className={`w-full object-cover ${images.length > 1 ? "h-full rounded-s-lg" : "h-[70vh] rounded-lg"}`}
             width={1155}
             height={765}
             src={images[0]}
