@@ -10,9 +10,20 @@ import { allTripSuggestions } from "contentlayer/generated";
 
 type Params = Promise<{ locale: string }>
 
-export default async function TripSuggestionsPage({params}: {params: Params}) {
+export default async function TripSuggestionsPage({params, searchParams}: {params: Params, searchParams: Promise<{ [key: string]: string | string[] | undefined }>}) {
   const {locale} = await params;
+  const { page } = await searchParams;
+  const pageSize = 9;
+  const currentPage = Number(page) || 1;
   const tripSuggestions = allTripSuggestions.filter((tripSuggestion) => tripSuggestion.locale === locale).sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
+  
+  let slicedTripSuggestions = [];
+  if((tripSuggestions.length - 1) > pageSize) {
+    slicedTripSuggestions = tripSuggestions.slice((currentPage - 1) * pageSize, (currentPage * pageSize));
+  }else{
+    slicedTripSuggestions = tripSuggestions;
+  }
+  
   return (
     <>
       <InnerPageHero
@@ -28,7 +39,7 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
               <div className="relative opacity-100">
                 <GridRow className="w-11/12 mx-auto px-4 sm:px-8">
                 {
-                  tripSuggestions.map((tripSuggestion, index) => (
+                  slicedTripSuggestions.map((tripSuggestion, index) => (
                     <TripSuggestionCard
                       key={index}
                       cardLink={tripSuggestion.slug}
@@ -100,7 +111,7 @@ export default async function TripSuggestionsPage({params}: {params: Params}) {
             </div>
           </div>
         </div>
-        {tripSuggestions.length > 9 && <Pagination/>}
+        {tripSuggestions.length > pageSize && <Pagination totalPages={Math.ceil((tripSuggestions.length - 1) / pageSize)} itemCount={tripSuggestions.length - 1} pageSize={pageSize}/>}
       </section>
     </>
   );
