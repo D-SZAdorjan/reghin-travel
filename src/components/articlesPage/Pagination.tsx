@@ -7,21 +7,21 @@ import { usePathname, useSearchParams } from "next/navigation";
 function generatePagination(totalPages: number, selectedPage: number){
   const pagination = [];
   
-  if(Number(selectedPage) == Number(totalPages)){
+  if(Number(selectedPage) == Number(totalPages) && Number(selectedPage - 2) > 0){
     pagination.push(Number(selectedPage) - 2);
   }
   
-  if(Number(selectedPage) > 1){
+  if(Number(selectedPage) > 1 && Number(selectedPage - 1) > 0){
     pagination.push(Number(selectedPage) - 1);
   }
 
   pagination.push(selectedPage);
   
-  if(Number(selectedPage) < (Number(totalPages))){
+  if(Number(selectedPage) < Number(totalPages) && Number(totalPages) > 1){
     pagination.push(Number(selectedPage) + 1);
   }
 
-  if(Number(selectedPage) == 1){
+  if(Number(selectedPage) == 1 && Number(totalPages) > 2){
     pagination.push(Number(selectedPage) + 2);
   }
   
