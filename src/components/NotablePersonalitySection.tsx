@@ -6,16 +6,17 @@ import GridRow from './general/GridRow';
 import { routing } from '@/i18n/routing';
 
 import { allNotablePersonalities } from "contentlayer/generated";
+import { getTranslations } from 'next-intl/server';
 
 export default async function NotablePersonalitySection({ locale = routing.defaultLocale }: { locale?: string }){
   const notablePersonalities = allNotablePersonalities.filter((person) => person.locale === locale);
-  
+  const translations = await getTranslations('HomePage.NotablePersonalitiesComponent');
   return (
     <section className="pb-20">
       <div className="container mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
-            <h2 className="transition duration-[800ms] text-2xl">Notable personalities</h2>
+            <h2 className="transition duration-[800ms] text-2xl">{translations.raw('title')}</h2>
           </div>
           {/* <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <Link href="/">

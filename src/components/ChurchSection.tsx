@@ -2,6 +2,7 @@ import placeholderImg from "@/../public/images/placeholder.png";
 import GridRow from "@/components/general/GridRow";
 import { routing } from "@/i18n/routing";
 import { allMonuments } from "contentlayer/generated";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,13 +22,13 @@ export default async function ChurchSection({
 }) {
   
   const churches = allMonuments.filter((church) => church.locale === locale && church.category === "church");
-  
+  const translations = await getTranslations('HomePage.ChurchesComponent');
   return (
     <section className="pb-20">
       <div className="container mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
-            <h2 className="transition duration-[800ms] text-2xl">Churches</h2>
+            <h2 className="transition duration-[800ms] text-2xl">{translations.raw('title')}</h2>
           </div>
           {/* <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <Link href="/churches">

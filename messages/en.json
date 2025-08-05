@@ -8,8 +8,43 @@
     "trip-suggestions": "Trip suggestions"
   },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "MonumentsComponent": {
+      "title": "Monuments",
+      "ctaBtnText": "See all"
+    },
+    "ChurchesComponent": {
+      "title": "Churches"
+    },
+    "NotablePersonalitiesComponent": {
+      "title": "Notable personalities"
+    },
+    "ArticlesComponent": {
+      "title": "Latest Articles",
+      "ctaBtnText": "See all",
+      "cardBtnText": "Read more"
+    }
+  },
+  "CityHistoryPage":{
+    "HeroComponent": {
+      "title": "History of Reghin",
+      "lead": "Szászrégen, throughout the centuries, although it faced many difficulties, was always able to rise again and continue to develop."
+    }
+  },
+  "MonumentsPage": {
+    "HeroComponent": {
+      "title": "History of Reghin",
+      "lead": "Szászrégen, throughout the centuries, although it faced many difficulties, was always able to rise again and continue to develop."
+    },
+    "CardComponent": {
+      "visitableTxt": "Visitable",
+      "notVisitableTxt": "Non-visitable",
+      "visitableLabel": "Visitable"
+    },
+    "InnerPage": {
+      "HeroComponent": {
+        "galleryViewBtnText": "See all photos"
+      }
+    }
   },
   "ArticlesPage": {
     "Sidebar": {

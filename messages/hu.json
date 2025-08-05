@@ -8,8 +8,27 @@
     "trip-suggestions": "Túra ajánlatok"
   },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "MonumentsComponent": {
+      "title": "Látványosságok",
+      "ctaBtnText": "Mutass többet"
+    },
+    "ChurchesComponent": {
+      "title": "Templomok"
+    },
+    "NotablePersonalitiesComponent": {
+      "title": "Nevezetes személyek"
+    },
+    "ArticlesComponent": {
+      "title": "Legfrissebb cikkek",
+      "ctaBtnText": "Mutass többet",
+      "cardBtnText": "Olvasd el"
+    }
+  },
+  "CityHistoryPage":{
+    "HeroComponent": {
+      "title": "Szászrégen történelme",
+      "lead": "Szászrégen az évszázadok során, bár sok nehézséggel szembesült, mindig képes volt újra talpra állni és fejlődni."
+    }
   },
   "ArticlesPage": {
     "Sidebar": {

@@ -5,22 +5,24 @@ import { allArticles } from 'contentlayer/generated';
 import Image from 'next/image';
 import Link from 'next/link';
 import GridRow from './general/GridRow';
+import { getTranslations } from 'next-intl/server';
 
 
 export default async function MainArticles({ locale = routing.defaultLocale }: { locale?: string }){
   const articles = allArticles.filter((article) => article.locale === locale && article.showOnHomePage && article.showOnHomePage === true).slice(0, 2);
+  const translations = await getTranslations('HomePage.ArticlesComponent');
   return (
     <section className="pb-20">
       <div className="container mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <h2 className="transition duration-[800ms] text-2xl">
-              Latest Articles
+              {translations.raw('title')}
             </h2>
           </div>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <Link href="/articles">
-              <span>See all</span>
+              <span>{translations.raw('ctaBtnText')}</span>
               <FontAwesomeIcon
                 icon={faArrowUp}
                 className="ms-2.5 text-base rotate-45"
@@ -53,7 +55,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
                   href={`/articles/${articles[0].slug}`}
                   className="mt-20 py-4 px-9 cursor-pointer bg-white flex items-center justify-center text-center text-sm font-medium rounded-xl border border-transparent transition duration-300 ease-[cubic-bezier(.165,.84,.44,1)] w-fit"
                 >
-                  See activities
+                  {translations.raw('cardBtnText')}
                   <FontAwesomeIcon icon={faArrowUp} className="ms-2 rotate-45"/>
                 </Link>
               </div>
@@ -84,7 +86,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
                   href={`/articles/${articles[1].slug}`}
                   className="mt-20 py-4 px-9 cursor-pointer bg-white flex items-center justify-center text-center text-sm font-medium rounded-xl border border-transparent transition duration-300 ease-[cubic-bezier(.165,.84,.44,1)] w-fit"
                 >
-                  See activities
+                  {translations.raw('cardBtnText')}
                   <FontAwesomeIcon icon={faArrowUp} className="ms-2 rotate-45"/>
                 </Link>
               </div>
