@@ -201,7 +201,7 @@ const NavigationBar = ({ locale }: { locale: string }) => {
               {pages.map((page, index) => (
                 <Link
                   href={`/${page}`}
-                  key={index}
+                  key={`desktop-nav-${index}`}
                   className={`dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]`}
                 >
                   {translations.raw(page)}
@@ -284,6 +284,8 @@ const NavigationBar = ({ locale }: { locale: string }) => {
         logoImg={LogoImg}
         sideNavOpen={openSideNav}
         toggleSideNav={toggleSideNav}
+        pages={pages}
+        translations={translations}
       />
     </header>
   );

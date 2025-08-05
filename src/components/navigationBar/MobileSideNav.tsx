@@ -2,18 +2,24 @@
 
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+
 import { useEffect } from "react";
 
 const MobileSideNav = ({
   logoImg,
   sideNavOpen,
   toggleSideNav,
+  pages,
+  translations
 }: {
   logoImg: StaticImageData | string | undefined;
   sideNavOpen: boolean;
   toggleSideNav: (value: boolean) => void;
+  pages: string[];
+  translations: ReturnType<typeof useTranslations>;
 }) => {
     useEffect(() => {
     if (sideNavOpen) {
@@ -61,7 +67,17 @@ const MobileSideNav = ({
             </div>
             <div className="flex items-center justify-between px-10 py-5">
               <div className={`text-primary-dark`}>
-                <div className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
+                {
+                  pages.map((page, index) => (
+                    <Link 
+                      key={`mobile-nav-${index}`}
+                      href={`/${page}`}
+                      className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
+                      {translations.raw(page)}
+                    </Link>
+                  ))
+                }
+                {/* <div className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
                   About
                 </div>
                 <div className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
@@ -72,17 +88,17 @@ const MobileSideNav = ({
                 </div>
                 <div className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
                   Churches
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between px-10 py-5">
+          {/* <div className="flex items-center justify-between px-10 py-5">
             <div className={`text-primary-dark`}>
               <div className="dropdown-button flex items-center transition duration-200 cursor-pointer py-2 px-5 rounded-full hover:bg-white/[0.1]">
                 Contact
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
