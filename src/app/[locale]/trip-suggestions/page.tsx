@@ -7,6 +7,7 @@ import GridRow from "@/components/general/GridRow";
 import InnerPageHero from "@/components/general/InnerPageHero";
 import TripSuggestionCard from "@/components/tripSuggestionsPage/TripSuggestionCard";
 import { allTripSuggestions } from "contentlayer/generated";
+import { getTranslations } from "next-intl/server";
 
 type Params = Promise<{ locale: string }>
 
@@ -23,13 +24,15 @@ export default async function TripSuggestionsPage({params, searchParams}: {param
   }else{
     slicedTripSuggestions = tripSuggestions;
   }
+
+  const translations = await getTranslations('TripSuggestionsPage.HeroComponent');
   
   return (
     <>
       <InnerPageHero
         heroImg="/images/home-hero-ana-landscape.png"
-        heroTitle="Your guide to the city"
-        heroLead="Find inspiration, guides and stories for wherever you're going Select a destination"
+        heroTitle={translations.raw('title')}
+        heroLead={translations.raw('lead')}
       />
       <section className="pb-20">
         <div className="container mx-auto">
@@ -111,7 +114,7 @@ export default async function TripSuggestionsPage({params, searchParams}: {param
             </div>
           </div>
         </div>
-        {tripSuggestions.length > pageSize && <Pagination totalPages={Math.ceil((tripSuggestions.length - 1) / pageSize)} itemCount={tripSuggestions.length - 1} pageSize={pageSize}/>}
+        {tripSuggestions.length > pageSize && <Pagination totalPages={Math.ceil((tripSuggestions.length - 1) / pageSize)} itemCount={tripSuggestions.length - 1} pageSize={pageSize} translationKey="TripSuggestionsPage.Pagination"/>}
       </section>
     </>
   );

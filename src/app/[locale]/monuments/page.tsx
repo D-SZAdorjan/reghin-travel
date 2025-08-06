@@ -6,6 +6,7 @@ import Pagination from "@/components/articlesPage/Pagination";
 import InnerPageHero from "@/components/general/InnerPageHero";
 import CardContainer from "@/components/monumentsPage/CardContainer";
 import { allMonuments } from "contentlayer/generated";
+import { getTranslations } from "next-intl/server";
 
 type Params = Promise<{ locale: string }>
 
@@ -22,18 +23,19 @@ export default async function MonumentsPage({params, searchParams}: {params: Par
   }else{
     slicedMonuments = monuments
   }
+  const translations = await getTranslations('MonumentsPage.HeroComponent');
   return (
     <>
     <InnerPageHero
             heroImg="/images/home-hero-ana-landscape.png"
             heroHeight="h-[35vh]"
-            heroTitle="Monuments"
-            heroLead="Monuments that speak to the soul of the city"
+            heroTitle={translations.raw('title')}
+            heroLead={translations.raw('lead')}
           />
     <CardContainer monuments={slicedMonuments}/>
     <section className="pb-20">
       <div className="container mx-auto">
-        { monuments.length - 1 > pageSize && <Pagination totalPages={Math.ceil((monuments.length - 1) / pageSize)} itemCount={monuments.length - 1}/>}
+        { monuments.length - 1 > pageSize && <Pagination totalPages={Math.ceil((monuments.length - 1) / pageSize)} itemCount={monuments.length - 1} translationKey="MonumentsPage.Pagination" pageSize={pageSize} />}
       </div>
     </section>
     </>

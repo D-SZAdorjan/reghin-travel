@@ -24,13 +24,11 @@
       "cardBtnText": "Olvasd el"
     }
   },
-  "CityHistoryPage":{
-    "HeroComponent": {
-      "title": "Szászrégen történelme",
-      "lead": "Szászrégen az évszázadok során, bár sok nehézséggel szembesült, mindig képes volt újra talpra állni és fejlődni."
-    }
-  },
   "ArticlesPage": {
+    "HeroComponent": {
+      "title": "Cikkeink",
+      "lead": "Találj inspirációt, útmutatókat és történeteket bárhová is készülsz"
+    },
     "Sidebar": {
       "title": "Legfrissebb cikkek"
     },
@@ -41,7 +39,48 @@
     "Pagination": {
       "previous": "Előző",
       "next": "Következő",
-      "pagintionInfoText": "Cikkek {articleNumber} az összesen {totalArticles} -ből"
+      "pagintionInfoText": "Cikkek {elementNumber} az összesen {totalElements} -ből"
+    }
+  },
+  "CityHistoryPage":{
+    "HeroComponent": {
+      "title": "Szászrégen történelme",
+      "lead": "Szászrégen az évszázadok során, bár sok nehézséggel szembesült, mindig képes volt újra talpra állni és fejlődni."
+    }
+  },
+  "MonumentsPage": {
+    "HeroComponent": {
+      "title": "Látványosságok",
+      "lead": "Emlékművek, amelyek a város lelkéhez szólnak."
+    },
+    "CardComponent": {
+      "visitableTxt": "Látogatható",
+      "notVisitableTxt": "Nem látogatható",
+      "visitableLabel": "Látogatható"
+    },
+    "Pagination": {
+      "previous": "Előző",
+      "next": "Következő",
+      "pagintionInfoText": "Látványosságok {elementNumber} az összesen {totalElements} -ből"
+    },
+    "InnerPage": {
+      "HeroComponent": {
+        "galleryViewBtnText": "Összes kép"
+      }
+    }
+  },
+  "TripSuggestionsPage": {
+    "HeroComponent": {
+      "title": "Útmutatód a városhoz",
+      "lead": "Találj inspirációt, útmutatókat és történeteket bárhová is készülsz. Válassz úti célt"
+    },
+    "CardComponent": {
+      "authorPrefix": "írta {author}"
+    },
+    "Pagination": {
+      "previous": "Előző",
+      "next": "Következő",
+      "pagintionInfoText": "Túra ajánlatok {elementNumber} az összesen {totalElements} -ből"
     }
   }
 }
