@@ -1,11 +1,11 @@
-import heroImageBottomShape from "@/../public/images/svgs/heroBottom.svg";
+import heroImageBottomShape from "@/../public/images/svgs/heroBottom-new.svg";
 import Image from "next/image";
 import GridRow from "./GridRow";
 
 export default async function InnerPageHero({heroImg, heroHeight = "h-[60vh]", heroTitle = "Your guide to everywhere", heroLead = "Find inspiration, guides and stories for wherever you're going Select a destination"}: {heroImg: string, heroHeight?: string, heroTitle: string, heroLead?: string}) {
   return (
     <section className={`w-full md:w-11/12 ${heroHeight} flex mx-auto relative mt-20 overflow-hidden rounded-t-xl`}>
-      <div className="absolute top-0 bottom-0 m-auto w-full h-full -z-10">
+      <div className="absolute top-0 bottom-0 m-auto w-full h-full z-5">
         <Image
           src={heroImg}
           className="w-full h-full object-cover max-h-[60vh]"

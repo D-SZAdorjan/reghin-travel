@@ -44,8 +44,8 @@ export default async function BlogPostInnerPage({ params }: {params: Params}) {
         heroTitle={data?.title || ""}
         heroLead={data?.lead}
       />
-      <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
-        <GridRow>
+      <section className="container pt-[60px] pb-[120px] mx-auto text-justify overflow-x-hidden">
+        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center z-20">
           <div className="w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
               <MdxContent code={data?.body.code || ""} />
