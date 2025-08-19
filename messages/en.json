@@ -8,10 +8,27 @@
     "trip-suggestions": "Trip suggestions"
   },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "MonumentsComponent": {
+      "title": "Monuments",
+      "ctaBtnText": "See all"
+    },
+    "ChurchesComponent": {
+      "title": "Churches"
+    },
+    "NotablePersonalitiesComponent": {
+      "title": "Notable personalities"
+    },
+    "ArticlesComponent": {
+      "title": "Latest Articles",
+      "ctaBtnText": "See all",
+      "cardBtnText": "Read more"
+    }
   },
   "ArticlesPage": {
+    "HeroComponent": {
+      "title": "Articles",
+      "lead": "Find inspiration, guides and stories for wherever you're going"
+    },
     "Sidebar": {
       "title": "Most recent articles"
     },
@@ -22,7 +39,48 @@
     "Pagination": {
       "previous": "Previous",
       "next": "Next",
-      "pagintionInfoText": "Showing articles {articleNumber} of {totalArticles}"
+      "pagintionInfoText": "Showing articles {elementNumber} of {totalElements}"
+    }
+  },
+  "CityHistoryPage":{
+    "HeroComponent": {
+      "title": "History of Reghin",
+      "lead": "Reghin, throughout the centuries, although it faced many difficulties, was always able to rise again and continue to develop."
+    }
+  },
+  "MonumentsPage": {
+    "HeroComponent": {
+      "title": "Monuments",
+      "lead": "Monuments that speak to the soul of the city"
+    },
+    "CardComponent": {
+      "visitableTxt": "Visitable",
+      "notVisitableTxt": "Non-visitable",
+      "visitableLabel": "Visitable"
+    },
+    "Pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pagintionInfoText": "Showing monuments {elementNumber} of {totalElements}"
+    },
+    "InnerPage": {
+      "HeroComponent": {
+        "galleryViewBtnText": "See all photos"
+      }
+    }
+  },
+  "TripSuggestionsPage": {
+    "HeroComponent": {
+      "title": "Your guide to the city",
+      "lead": "Find inspiration, guides and stories for wherever you're going Select a destination"
+    },
+    "CardComponent": {
+      "authorPrefix": "By {author}"
+    },
+    "Pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pagintionInfoText": "Showing trip-suggestions {elementNumber} of {totalElements}"
     }
   }
 }

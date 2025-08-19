@@ -1,6 +1,7 @@
 "use client"
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -28,7 +29,7 @@ function generatePagination(totalPages: number, selectedPage: number){
   return pagination;
 }
 
-export default function Pagination({totalPages = 0, pageSize = 6, itemCount}: {totalPages?: number, pageSize?: number, itemCount?: number}) {
+export default function Pagination({totalPages = 0, pageSize = 6, itemCount, translationKey}: {totalPages?: number, pageSize?: number, itemCount?: number, translationKey?: string}) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get('page')) || 1;
@@ -41,12 +42,15 @@ export default function Pagination({totalPages = 0, pageSize = 6, itemCount}: {t
     return `${pathname}?${params}`;
   }
 
+  const translations = translationKey ? useTranslations(translationKey): useTranslations('ArticlesPage.Pagination');
+
   return (
     <div className="flex justify-center flex-col mt-16">
       <div className="pagination flex justify-center items-center">
         {currentPage > 1 ?
           <Link 
             href={createPageURL(Number(currentPage) - 1)}
+            aria-label={translations?.raw('previous')}
             className="cursor-pointer me-4 justify-center w-10 h-10 rounded-full flex items-center text-center text-sm font-base">
             <FontAwesomeIcon
               className="font-normal text-primary-dark"
@@ -94,7 +98,8 @@ export default function Pagination({totalPages = 0, pageSize = 6, itemCount}: {t
           </div> */}
         </div>
         {currentPage < Number(totalPages) ?
-          <Link 
+          <Link
+            aria-label={translations?.raw('previous')}
             href={createPageURL(Number(currentPage) + 1)}
             className="cursor-pointer me-4 justify-center w-10 h-10 rounded-full flex items-center text-center text-sm font-base">
             <FontAwesomeIcon
@@ -110,7 +115,7 @@ export default function Pagination({totalPages = 0, pageSize = 6, itemCount}: {t
           </div>}
       </div>
       <div className="text-sm text-center mt-5">
-        Showing results { String(currentPage * Number(pageSize) - Number(pageSize) + 1 )}-{String(Math.min(Number(pageSize) * currentPage, Number(itemCount) + 1))} of {String(Number(itemCount) + 1)}
+        {translations && translations('pagintionInfoText', {totalElements: String(Number(itemCount) + 1), elementNumber: String(currentPage * Number(pageSize) - Number(pageSize) + 1 ) + "-" + String(Math.min(Number(pageSize) * currentPage, Number(itemCount) + 1))})}
       </div>
     </div>
   );

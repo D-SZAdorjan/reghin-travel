@@ -1,10 +1,12 @@
 import { faClockFour } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
-const MonumentCard = ({cardId, cardSlug, cardImage, cardDuration, cardLocation, cardTitle, cardPrice} : {cardId: string, cardSlug: string, cardImage: string, cardDuration: string, cardLocation: string, cardTitle: string, cardPrice: string}) => {
+export default async function MonumentCard({cardId, cardSlug, cardImage, cardDuration, cardLocation, cardTitle, cardPrice} : {cardId: string, cardSlug: string, cardImage: string, cardDuration: string, cardLocation: string, cardTitle: string, cardPrice: string}) {
+  const translations = await getTranslations('MonumentsPage.CardComponent');
   return (
     <div
       key={cardId}
@@ -50,14 +52,12 @@ const MonumentCard = ({cardId, cardSlug, cardImage, cardDuration, cardLocation, 
             </div>
 
             <div className="text-right text-white">
-              <div className="text-sm leading-[1.4]">From</div>
-              <div className="text-lg font-medium">${cardPrice}</div>
+              <div className="text-sm leading-[1.4]">{translations.raw('visitableLabel')}</div>
+              <div className="text-lg font-medium">{cardPrice}</div>
             </div>
           </div>
         </div>
       </Link>
     </div>
   );
-};
-
-export default MonumentCard;
+}

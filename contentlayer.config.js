@@ -136,7 +136,7 @@ export const CaseStudy = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: 'src/content',
+  contentDirPath: 'src/content/dynamic',
   documentTypes: [Article, Monument, NotablePersonality, TripSuggestion, CaseStudy],
   mdx: {
     remarkPlugins: [remarkGfm]

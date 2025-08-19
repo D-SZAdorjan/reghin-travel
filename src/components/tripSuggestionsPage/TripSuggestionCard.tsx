@@ -1,8 +1,10 @@
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const TripSuggestionCard = ({cardLink = "/", cardBadgeText, cardImage = "/images/placeholder.png", cardImageAlt = "Trip Suggestion Card Image", cardDate, cardAuthor, cardTitle}: {cardLink?: string, cardBadgeText: string, cardImage: string, cardImageAlt: string, cardDate: string, cardAuthor: string, cardTitle: string}) => {
+export default async function TripSuggestionCard({cardLink = "/", cardBadgeText, cardImage = "/images/placeholder.png", cardImageAlt = "Trip Suggestion Card Image", cardDate, cardAuthor, cardTitle}: {cardLink?: string, cardBadgeText: string, cardImage: string, cardImageAlt: string, cardDate: string, cardAuthor: string, cardTitle: string}){
+  const translations = await getTranslations('TripSuggestionsPage.CardComponent');
   return (
     <div className="flex-[0_0_auto] py-4 w-full md:w-1/2 lg:w-1/3 box-border max-w-full px-[calc(30px*0.5)]">
       <Link href={`/trip-suggestions/${cardLink}`} className="block group/move-info">
@@ -22,7 +24,7 @@ const TripSuggestionCard = ({cardLink = "/", cardBadgeText, cardImage = "/images
           <div className="items-center flex text-base">
             <div className="leading-[1.3] group-hover/move-info:text-primary-dark">{cardDate}</div>
             <div className="w-[1px] h-7 bg-accent-light mx-2.5"></div>
-            <div className="leading-[1.3] group-hover/move-info:text-primary-dark">By {cardAuthor}</div>
+            <div className="leading-[1.3] group-hover/move-info:text-primary-dark">{translations('authorPrefix', {author: cardAuthor})}</div>
           </div>
           <h3 className="mt-2.5 text-lg font-semibold text-text-primary group-hover/move-info:underline duration-600 transition-transform">
             {cardTitle}
@@ -32,5 +34,3 @@ const TripSuggestionCard = ({cardLink = "/", cardBadgeText, cardImage = "/images
     </div>
   );
 }
-
-export default TripSuggestionCard

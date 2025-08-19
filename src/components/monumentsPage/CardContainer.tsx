@@ -1,8 +1,10 @@
 import GridRow from '@/components/general/GridRow'
 import { Monument } from 'contentlayer/generated'
 import MonumentCard from './MonumentCard'
+import { getTranslations } from 'next-intl/server';
 
-const CardContainer = ({monuments = []} : {monuments?: Monument[]}) => {
+export default async function CardContainer({monuments = []} : {monuments?: Monument[]}){
+  const translations = await getTranslations('MonumentsPage.CardComponent');
   return (
     <section className="pb-5">
       <div className="container mx-auto">
@@ -16,7 +18,7 @@ const CardContainer = ({monuments = []} : {monuments?: Monument[]}) => {
                 cardDuration={monument.category}
                 cardLocation={monument.address}
                 cardTitle={monument.name}
-                cardPrice={monument.isVisitable ? "Visitable" : "Non-visitable"}
+                cardPrice={monument.isVisitable ? translations.raw('visitableTxt') : translations.raw('notVisitableTxt')}
             />
         ))}
             {/* <MonumentCard
@@ -52,5 +54,3 @@ const CardContainer = ({monuments = []} : {monuments?: Monument[]}) => {
     </section>
   )
 }
-
-export default CardContainer

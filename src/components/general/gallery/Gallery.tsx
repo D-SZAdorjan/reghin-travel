@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import ImageLightBox from "./ImageLightBox";
+import { useTranslations } from "next-intl";
 
 export default function Gallery({images = []}: {images?: string[]}) {
   const [activeLightBox, setActiveLightBox] = useState<boolean>(false);
@@ -12,6 +13,8 @@ export default function Gallery({images = []}: {images?: string[]}) {
     setCurrentSlideIndex(index);
     setActiveLightBox(true);
   }
+
+  const translations = useTranslations('MonumentsPage.InnerPage.HeroComponent');
   return (
     <>
       <div className="relative overflow-hidden mt-8 w-full">
@@ -70,7 +73,7 @@ export default function Gallery({images = []}: {images?: string[]}) {
               onClick={() => handleImagePopUp(0)}
               className="rounded-3xl bg-primary-dark hover:bg-primary py-2 px-4 md:py-5 md:px-10 text-white hover:text-text-primary hover:cursor-pointer text-base font-bold"
             >
-              See all photos
+              {translations.raw('galleryViewBtnText')}
             </button>
           </div>
         </div>}

@@ -4,6 +4,7 @@ import SideBar from "@/components/articlesPage/SideBar";
 import GridRow from "@/components/general/GridRow";
 import { allArticles } from "contentlayer/generated";
 import InnerPageHero from "@/components/general/InnerPageHero";
+import { getTranslations } from "next-intl/server";
 
 type Params = Promise<{ locale: string }>
 
@@ -20,19 +21,20 @@ export default async function BlogsPage({params, searchParams}: {params: Params,
     slicedArticles = articles
   }
 
+  const translations = await getTranslations('ArticlesPage');
   return (
     <>
       <InnerPageHero
         heroImg="/images/home-hero-ana-landscape.png"
-        heroTitle="Blogs"
-        heroLead="Find inspiration, guides and stories for wherever you're going"
+        heroTitle={translations.raw('HeroComponent.title')}
+        heroLead={translations.raw('HeroComponent.lead')}
       />
       <section className="pt-[60px] pb-[120px]">
         <div className="max-w-[64%] lg:max-w-[80%] mx-auto">
           <GridRow className="mx-[calc(30px*-0.5)]">
             <div className="flex-[0_0_auto] w-full lg:w-4/6 py-4 px-8">
               <PostList articles={slicedArticles}/>
-              { articles.length - 1 > pageSize && <Pagination totalPages={Math.ceil((articles.length - 1) / pageSize)} itemCount={articles.length - 1} pageSize={pageSize}/>}
+              { articles.length - 1 > pageSize && <Pagination totalPages={Math.ceil((articles.length - 1) / pageSize)} itemCount={articles.length - 1} pageSize={pageSize} translationKey="ArticlesPage.Pagination"/>}
             </div>
             <div className="flex-[0_0_auto] w-full lg:w-2/6 py-4 px-8">
               <SideBar recentArticles={articles.filter((article) => article.locale === locale).slice(0, 3)} />
