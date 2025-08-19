@@ -1,4 +1,5 @@
-import heroImageBottomShape from "@/../public/images/svgs/heroBottom-new.svg";
+// import heroImageBottomShape from "@/../public/images/svgs/heroBottom-new.svg";
+import heroImageBottomShape from "@/../public/images/svgs/heroBottom.svg";
 import Image from "next/image";
 import GridRow from "./GridRow";
 

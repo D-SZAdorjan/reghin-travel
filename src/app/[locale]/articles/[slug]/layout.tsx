@@ -17,13 +17,7 @@ export default async function ArticleInnerPageLayout({
 
   return (
     <section
-      className="-z-20 overflow-hidden"
-      style={{
-        backgroundImage: 'url("/images/bg-elements2-removebg-preview.png")',
-        backgroundPosition: "center",
-        backgroundRepeat: "repeat",
-      }}
-    >
+      className="-z-20 overflow-hidden">
       {/* <Image className="absolute bottom-0 right-0 m-auto object-cover -z-10" src={bgDesignElement} width={720} height={720} alt="Background Design Element"></Image> */}
       {children}
     </section>
