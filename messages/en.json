@@ -15,6 +15,10 @@
     "ChurchesComponent": {
       "title": "Churches"
     },
+    "TripSuggestionsComponent": {
+      "title": "Trip suggestions",
+      "lead": "Find inspiration, guides and stories for wherever you're going Select a destination"
+    },
     "NotablePersonalitiesComponent": {
       "title": "Notable personalities"
     },
