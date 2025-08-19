@@ -42,7 +42,8 @@ export default function Pagination({totalPages = 0, pageSize = 6, itemCount, tra
     return `${pathname}?${params}`;
   }
 
-  const translations = translationKey ? useTranslations(translationKey): useTranslations('ArticlesPage.Pagination');
+  translationKey = translationKey ? translationKey : 'ArticlesPage.Pagination';
+  const translations = useTranslations(translationKey);
 
   return (
     <div className="flex justify-center flex-col mt-16">
