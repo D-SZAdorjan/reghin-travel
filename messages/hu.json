@@ -15,6 +15,10 @@
     "ChurchesComponent": {
       "title": "Templomok"
     },
+    "TripSuggestionsComponent": {
+      "title": "Útvonal javaslatok",
+      "lead": "Inspiráció, útmutatók és történetek, bárhová is utazol Válassz úti célt"
+    },
     "NotablePersonalitiesComponent": {
       "title": "Nevezetes személyek"
     },
