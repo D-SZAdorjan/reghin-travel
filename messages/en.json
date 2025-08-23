@@ -13,7 +13,8 @@
       "ctaBtnText": "See all"
     },
     "ChurchesComponent": {
-      "title": "Churches"
+      "title": "Churches",
+      "filterCategory": "church"
     },
     "TripSuggestionsComponent": {
       "title": "Trip suggestions",

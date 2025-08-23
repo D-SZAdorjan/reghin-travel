@@ -2,7 +2,7 @@ import GridRow from "@/components/general/GridRow";
 import ContentTextBlock from "@/components/innerPage/ContentTextBlock";
 import ContentTitle from "@/components/innerPage/ContentTitle";
 
-const ContentHu = () => {
+const ContentEn = () => {
   return (
     <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
       <GridRow>
@@ -249,4 +249,4 @@ const ContentHu = () => {
   );
 };
 
-export default ContentHu;
+export default ContentEn;
