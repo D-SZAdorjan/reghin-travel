@@ -22,7 +22,8 @@ const NavigationBar = ({ locale }: { locale: string }) => {
   const transparentNav: string[] = [
     "/",
     "/en",
-    "/hu"
+    "/hu",
+    "/ro"
   ];
 
   const pages: string[] = [
