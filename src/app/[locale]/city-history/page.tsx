@@ -4,6 +4,7 @@
 import InnerPageHero from "@/components/general/InnerPageHero";
 import ContentEn from "@/content/city-history/ContentEn";
 import ContentHu from "@/content/city-history/ContentHu";
+import ContentRo from "@/content/city-history/ContentRo";
 import { getTranslations } from "next-intl/server";
 
 type Params = Promise<{ locale: string }>
@@ -20,6 +21,7 @@ export default async function CityHistoryPage({params}: {params: Params}) {
       />
       {locale === "hu" && <ContentHu/>}
       {locale === "en" && <ContentEn/>}
+      {locale === "ro" && <ContentRo/>}
     </>
   );
 }

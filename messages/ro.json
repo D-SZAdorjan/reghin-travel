@@ -1,0 +1,91 @@
+{
+  "NavigationBar": {
+    "webpageLogo": "/images/logos/reghin-travel-logo3.png",
+    "articles": "Articole",
+    "city-history": "Istoria orașului",
+    "monuments": "Monumente",
+    "churches": "Biserici",
+    "trip-suggestions": "Sugestii de călătorie"
+  },
+  "HomePage": {
+    "MonumentsComponent": {
+      "title": "Monumente",
+      "ctaBtnText": "Vezi toate"
+    },
+    "ChurchesComponent": {
+      "title": "Biserici",
+      "filterCategory": "biserică"
+    },
+    "TripSuggestionsComponent": {
+      "title": "Sugestii de călătorie",
+      "lead": "Găsește inspirație, ghiduri și povești pentru oriunde ai merge. Selectează o destinație"
+    },
+    "NotablePersonalitiesComponent": {
+      "title": "Personalități remarcabile"
+    },
+    "ArticlesComponent": {
+      "title": "Ultimele articole",
+      "ctaBtnText": "Vezi toate",
+      "cardBtnText": "Citește mai mult"
+    }
+  },
+  "ArticlesPage": {
+    "HeroComponent": {
+      "title": "Articole",
+      "lead": "Găsește inspirație, ghiduri și povești pentru oriunde ai merge"
+    },
+    "Sidebar": {
+      "title": "Cele mai recente articole"
+    },
+    "Cards": {
+      "buttonText": "Citește mai mult",
+      "byText": "De"
+    },
+    "Pagination": {
+      "previous": "Anterior",
+      "next": "Următor",
+      "pagintionInfoText": "Se afișează articolele {elementNumber} din {totalElements}"
+    }
+  },
+  "CityHistoryPage": {
+    "HeroComponent": {
+      "title": "Istoria Reghinului",
+      "lead": "Reghin, de-a lungul secolelor, deși a întâmpinat multe dificultăți, a reușit mereu să renască și să continue să se dezvolte."
+    }
+  },
+  "MonumentsPage": {
+    "HeroComponent": {
+      "title": "Monumente",
+      "lead": "Monumente care vorbesc sufletului orașului"
+    },
+    "CardComponent": {
+      "visitableTxt": "Vizitabil",
+      "notVisitableTxt": "Nevizitabil",
+      "visitableLabel": "Vizitabil"
+    },
+    "Pagination": {
+      "previous": "Anterior",
+      "next": "Următor",
+      "pagintionInfoText": "Se afișează monumentele {elementNumber} din {totalElements}"
+    },
+    "InnerPage": {
+      "HeroComponent": {
+        "galleryViewBtnText": "Vezi toate fotografiile"
+      }
+    }
+  },
+  "TripSuggestionsPage": {
+    "HeroComponent": {
+      "title": "Ghidul tău pentru oraș",
+      "lead": "Găsește inspirație, ghiduri și povești pentru oriunde ai merge. Selectează o destinație"
+    },
+    "CardComponent": {
+      "authorPrefix": "De {author}"
+    },
+    "Pagination": {
+      "previous": "Anterior",
+      "next": "Următor",
+      "pagintionInfoText": "Se afișează sugestiile de călătorie {elementNumber} din {totalElements}"
+    }
+  }
+}

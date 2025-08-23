@@ -21,8 +21,8 @@ export default async function ChurchSection({
   locale?: string;
 }) {
   
-  const churches = allMonuments.filter((church) => church.locale === locale && church.category === "church");
   const translations = await getTranslations('HomePage.ChurchesComponent');
+  const churches = allMonuments.filter((church) => church.locale === locale && church.category === translations.raw('filterCategory'));
   return (
     <section className="pb-20">
       <div className="container mx-auto">

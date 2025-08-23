@@ -19,10 +19,10 @@ const languages = [
     abbreviation: "HUN",
     slug: "hu"
   },
-  // {
-  //   lang: "Romanian",
-  //   abbreviation: "ROM",
-  //   slug: "ro"
-  // },
+  {
+    lang: "Romanian",
+    abbreviation: "ROM",
+    slug: "ro"
+  },
 ]
 export default languages;

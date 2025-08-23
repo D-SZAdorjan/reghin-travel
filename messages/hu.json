@@ -13,7 +13,8 @@
       "ctaBtnText": "Mutass többet"
     },
     "ChurchesComponent": {
-      "title": "Templomok"
+      "title": "Templomok",
+      "filterCategory": "templom"
     },
     "TripSuggestionsComponent": {
       "title": "Útvonal javaslatok",
