@@ -12,8 +12,8 @@ export default async function NotablePersonalitySection({ locale = routing.defau
   const notablePersonalities = allNotablePersonalities.filter((person) => person.locale === locale);
   const translations = await getTranslations('HomePage.NotablePersonalitiesComponent');
   return (
-    <section className="pb-20">
-      <div className="container mx-auto">
+    <section className="pb-20 w-full">
+      <div className="container px-4 md:px-0 mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <h2 className="transition duration-[800ms] text-2xl">{translations.raw('title')}</h2>
@@ -31,7 +31,7 @@ export default async function NotablePersonalitySection({ locale = routing.defau
         <GridRow className="mx-[calc(30px*-0.5)] justify-evenly items-center pt-14">
           {notablePersonalities.map((person, index) => {
             return (
-              <div key={`person-${index}-${person.slug}`} className="flex-[0_0_auto] py-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/5 box-border max-w-full px-[calc(30px*0.5)]">
+              <div key={`person-${index}-${person.slug}`} className="flex-[0_0_auto] py-4 w-full sm:w-1/2 md:w-1/5 box-border max-w-full px-[calc(30px*0.5)]">
                 <Link
                   href={`/notable-personalities/${person.slug}`}
                   className="relative z-0 no-underline group block"
@@ -42,7 +42,7 @@ export default async function NotablePersonalitySection({ locale = routing.defau
                       height={600}
                       src={person.heroImage ? person.heroImage : placeholderImg}
                       alt="image"
-                      className="img-ratio aspect-[9/12] object-cover group-hover:scale-150 transition duration-700 ease-in-out"
+                      className="img-ratio aspect-[9/12] w-full h-full max-h-[60%] object-cover group-hover:scale-150 transition duration-700 ease-in-out"
                     />
                   </div>
                   <div className="h-full w-full bg-black z-10 absolute top-0 left-0 rounded-xl opacity-60 hidden group-hover:flex justify-center items-center ">

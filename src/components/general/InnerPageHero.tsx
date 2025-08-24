@@ -22,7 +22,7 @@ export default async function InnerPageHero({heroImg, heroHeight = "h-[60vh]", h
           alt="Hero Image"
         />
       </div>
-      <div className="container m-auto z-10">
+      <div className="container m-auto z-10 px-4 md:px-0">
         <GridRow className="mx-[calc(30px*-0.5)] justify-center">
           <div className="flex-[0_0_auto] w-full">
             <div className="text-center">

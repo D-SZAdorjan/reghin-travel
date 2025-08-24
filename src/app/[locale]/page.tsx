@@ -3,7 +3,6 @@ import HomeHeroSection from "@/components/HomeHeroSection";
 import InfoCardSlider from "@/components/InfoCardSlider";
 import MainArticles from "@/components/MainArticles";
 import NotablePersonalitySection from "@/components/NotablePersonalitySection";
-import TripSuggestionSection from "@/components/TripSuggestionSection";
 
 type Params = Promise<{ locale: string }>
 
@@ -13,11 +12,11 @@ export default async function Home({params}: {params: Params}) {
   return (
     <>
       <HomeHeroSection/>
-      <section className="pb-20 relative overflow-hidden">
+      <section className="pb-20 w-full relative overflow-hidden">
         <InfoCardSlider locale={locale} />
       </section>
       <ChurchSection locale={locale}/>
-      <TripSuggestionSection locale={locale} />
+      {/* <TripSuggestionSection locale={locale} /> */}
       <NotablePersonalitySection locale={locale}/>
       {/* <HospitalitySection/> */}
       <MainArticles locale={locale}/>

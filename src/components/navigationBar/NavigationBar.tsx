@@ -74,13 +74,13 @@ const NavigationBar = ({ locale }: { locale: string }) => {
   
   return (
     <header
-      className={`fixed top-0 start-0 right-0 z-50 ${
+      className={`fixed top-0 start-0 right-0 max-w-[100vw] z-50 ${
         scrollY > 50 || !transparentNav.includes(pathName)
           ? "bg-primary-light border-b-2 border-primary border-solid shadow-md"
           : "bg-transparent"
       } transition duration-200`}
     >
-      <div className="container relative mx-auto flex items-center justify-between min-h-20">
+      <div className="container px-4 md:px-0 relative mx-auto flex items-center justify-between min-h-20">
         <div className="header-left">
           <div className="flex align-center">
             <Link href={"/"} className="flex align-center">

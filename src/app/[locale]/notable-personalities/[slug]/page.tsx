@@ -31,9 +31,9 @@ export default async function NotablePersonalitiesInnerPage({params}: {params: P
   return (
     <>
     <InnerPageHero heroTitle={`${notablePersonality?.firstName} ${notablePersonality?.lastName}`} heroImg={notablePersonality?.heroImage ? notablePersonality.heroImage : "/images/placeholder.png"}/>
-    <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
-        <GridRow>
-          <div className="w-11/12 mx-auto px-4 sm:px-8">
+    <section className="container flex justify-center pt-[60px] pb-[120px] mx-auto text-justify">
+        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center w-full">
+          <div className="w-full sm:w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
               <MdxContent code={notablePersonality?.body.code || ""} />
             </div>

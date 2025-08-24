@@ -40,9 +40,9 @@ export default async function TripSuggestionsInnerPage({params}: {params: Params
         heroTitle={data?.title || ""}
         heroLead={data?.lead}
       />
-      <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
-        <GridRow>
-          <div className="w-11/12 mx-auto px-4 sm:px-8">
+      <section className="container flex justify-center w-full pt-[60px] pb-[120px] mx-auto text-justify">
+        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center w-full">
+          <div className="w-full sm:w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
               <MdxContent code={data?.body.code || ""} />
               {/* <ContentList

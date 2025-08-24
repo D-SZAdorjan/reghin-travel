@@ -15,7 +15,7 @@ export default async function InfoCardSlider({ locale = routing.defaultLocale}: 
   const translations = await getTranslations('HomePage.MonumentsComponent');
   const monuments = allMonuments.filter((monument) => monument.locale === locale && monument.category !== "church").sort((a, b) => new Date(b.createDate).getTime() - new Date(a.createDate).getTime());
   return (
-    <div className="container mx-auto">
+    <div className="container px-4 md:px-0 mx-auto">
       <GridRow>
         <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
           <h2 className="transition duration-[800ms] text-2xl">

@@ -9,7 +9,7 @@ export default async function GalleryHero({title = "", address = "", visitHours 
   return (
     <>
       <section className="w-full md:w-11/12 flex mx-auto mt-30">
-        <GridRow>
+        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center w-full">
           <div className="flex-[0_0_auto] w-full px-8 md:px-4">
             <div className="flex items-center justify-start">
               {
@@ -52,7 +52,7 @@ export default async function GalleryHero({title = "", address = "", visitHours 
           </div>
         </GridRow>
       </section>
-      {images.length > 0 && <section className="w-full md:w-11/12 flex mx-auto">
+      {images.length > 0 && <section className="w-screen md:w-11/12 flex mx-auto">
         <Gallery images={images}/>
       </section>}
     </>

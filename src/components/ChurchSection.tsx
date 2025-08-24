@@ -24,8 +24,8 @@ export default async function ChurchSection({
   const translations = await getTranslations('HomePage.ChurchesComponent');
   const churches = allMonuments.filter((church) => church.locale === locale && church.category === translations.raw('filterCategory'));
   return (
-    <section className="pb-20">
-      <div className="container mx-auto">
+    <section className="pb-20 w-full">
+      <div className="container px-4 md:px-0 mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <h2 className="transition duration-[800ms] text-2xl">{translations.raw('title')}</h2>
@@ -40,7 +40,7 @@ export default async function ChurchSection({
             </Link>
           </div> */}
         </GridRow>
-        <div className="grid grid-cols-12 grid-rows-2 gap-7 pt-14 transition duration-[800ms] ease">
+        <div className="grid grid-cols-12 grid-rows-2 gap-3 md:gap-7 pt-14 transition duration-[800ms] ease">
           {churches.map((church, index) => {
             return (
               <Link
