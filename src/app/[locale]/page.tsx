@@ -3,7 +3,6 @@ import HomeHeroSection from "@/components/HomeHeroSection";
 import InfoCardSlider from "@/components/InfoCardSlider";
 import MainArticles from "@/components/MainArticles";
 import NotablePersonalitySection from "@/components/NotablePersonalitySection";
-import TripSuggestionSection from "@/components/TripSuggestionSection";
 
 type Params = Promise<{ locale: string }>
 
