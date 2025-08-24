@@ -17,7 +17,7 @@ export default function ImageLightBox({
   return (
     <div
       id="myModal"
-      className={`modal ${activeLightBox ? "activeImageLightBox" : ""}`}
+      className={`modal w-full overflow-hidden ${activeLightBox ? "activeImageLightBox" : ""}`}
     >
       <div
         className="close cursor"

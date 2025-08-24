@@ -12,8 +12,8 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
   const articles = allArticles.filter((article) => article.locale === locale && article.showOnHomePage && article.showOnHomePage === true).slice(0, 2);
   const translations = await getTranslations('HomePage.ArticlesComponent');
   return (
-    <section className="pb-20">
-      <div className="container mx-auto">
+    <section className="pb-20 w-full">
+      <div className="container px-4 md:px-0 mx-auto">
         <GridRow>
           <div className="flex-[0_0_auto] -gap-1.5 box-border max-w-full px-[calc(30px*0.5)] pt-0">
             <h2 className="transition duration-[800ms] text-2xl">
@@ -30,7 +30,7 @@ export default async function MainArticles({ locale = routing.defaultLocale }: {
             </Link>
           </div>
         </GridRow>
-        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center pt-14">
+        <GridRow className="mx-[calc(30px*-0.5)] justify-between items-stretch pt-14">
           { articles[0] && <div className="px-[calc(30px*0.5)] flex-[0_0_auto] w-full mb-8 md:mb-0 md:w-1/2 box-border">
             <div className="relative h-full z-0 box-border">
               <div className="absolute top-0 left-0 w-full h-full z-[-1] box-border">

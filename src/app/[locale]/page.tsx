@@ -13,11 +13,11 @@ export default async function Home({params}: {params: Params}) {
   return (
     <>
       <HomeHeroSection/>
-      <section className="pb-20 relative overflow-hidden">
+      <section className="pb-20 w-full relative overflow-hidden">
         <InfoCardSlider locale={locale} />
       </section>
       <ChurchSection locale={locale}/>
-      <TripSuggestionSection locale={locale} />
+      {/* <TripSuggestionSection locale={locale} /> */}
       <NotablePersonalitySection locale={locale}/>
       {/* <HospitalitySection/> */}
       <MainArticles locale={locale}/>

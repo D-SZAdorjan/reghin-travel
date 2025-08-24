@@ -15,7 +15,7 @@ const CheckpointComponent = ({ items = [], componentId = "checkpoint" }: {items?
     setOpenItemId((prev) => (prev === id ? null : id));
   };
   return (
-    <section className="relative before:absolute before:top-[10px] before:bottom-[10px] before:left-[15px] before:border-2 before:border-dashed before:border-accent before:-z-1">
+    <section className="relative mb-5 before:absolute before:top-[10px] before:bottom-[10px] before:left-[15px] before:border-2 before:border-dashed before:border-accent before:-z-1">
         {
             items.map((item, index) => (
                 <div key={`${index}-${componentId}`} className="flex mt-8">

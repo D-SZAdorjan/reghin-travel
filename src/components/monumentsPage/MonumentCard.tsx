@@ -10,7 +10,7 @@ export default async function MonumentCard({cardId, cardSlug, cardImage, cardDur
   return (
     <div
       key={cardId}
-      className="flex-[0_0_auto] py-4 w-full md:w-1/2 lg:w-1/3 box-border max-w-full px-[calc(30px*0.5)]"
+      className="flex-[0_0_auto] py-4 w-full md:w-1/2 lg:w-1/3 box-border max-w-full sm:px-[calc(30px*0.5)]"
     >
       <Link
         href={`/monuments/${cardSlug}`}
@@ -36,11 +36,11 @@ export default async function MonumentCard({cardId, cardSlug, cardImage, cardDur
             </div>
           </div>
 
-          <div className="flex items-end justify-between z-1">
-            <div>
+          <div className="flex flex-wrap sm:flex-nowrap items-end justify-between z-1">
+            <div className="flex">
               <div className="flex items-center text-sm text-white">
                 {/* <i className="icon-pin flex text-base text-white me-1"></i> */}
-                <FontAwesomeIcon icon={faLocationDot} size="lg" className="me-1" />
+                <FontAwesomeIcon icon={faLocationDot} size="lg" className="me-2" />
                 {cardLocation}
               </div>
 
@@ -51,7 +51,7 @@ export default async function MonumentCard({cardId, cardSlug, cardImage, cardDur
               </h3>
             </div>
 
-            <div className="text-right text-white">
+            <div className="sm:text-right text-white">
               <div className="text-sm leading-[1.4]">{translations.raw('visitableLabel')}</div>
               <div className="text-lg font-medium">{cardPrice}</div>
             </div>

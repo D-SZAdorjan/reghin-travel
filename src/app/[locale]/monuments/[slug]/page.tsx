@@ -45,9 +45,9 @@ export default async function MonumentsInnerPage({ params }: {params: Params}) {
       address={data.address}
       visitHours={data.openHoursShort || data.openHours || ""}
       images={data.imageGallery && data.imageGallery.length > 0 ? data.imageGallery : [data.heroImage!]}/>
-      <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
+      <section className="container w-full px-4 sm:px-0 pt-[60px] pb-[120px] mx-auto text-justify">
         <GridRow>
-          <div className="w-11/12 mx-auto px-4 sm:px-8">
+          <div className="w-screen sm:w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
               <MdxContent code={data?.body.code || ""} />
               <GridRow className="mx-[calc(30px*-0.5)] justify-between items-center pt-5">

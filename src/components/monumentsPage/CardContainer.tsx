@@ -8,7 +8,7 @@ export default async function CardContainer({monuments = []} : {monuments?: Monu
   return (
     <section className="pb-5">
       <div className="container mx-auto">
-        <GridRow className="w-11/12 mx-auto px-4 sm:px-8 mt-20">
+        <GridRow className="sm:w-11/12 mx-auto px-4 sm:px-8 mt-20">
         {monuments.map((monument, index) => (
             <MonumentCard
                 key={monument._id}

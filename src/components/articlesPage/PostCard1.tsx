@@ -6,7 +6,7 @@ export default async function PostCard1({cardLink = "/", cardImage, imageWidth =
   const translations = await getTranslations('ArticlesPage');
   return (
     <Link href={cardLink} className="flex flex-col md:flex-row items-center mb-8">
-      <div className={`me-8 ${imageWidth}`}>
+      <div className={`md:me-8 ${imageWidth}`}>
         <Image
           className="object-cover rounded-lg aspect-5/4"
           src={cardImage ? cardImage : "/images/placeholder.png"}

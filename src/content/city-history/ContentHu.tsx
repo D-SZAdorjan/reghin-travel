@@ -6,7 +6,7 @@ const ContentHu = () => {
   return (
     <section className="container pt-[60px] pb-[120px] mx-auto text-justify">
         <GridRow>
-          <div className="w-11/12 mx-auto px-4 sm:px-8">
+          <div className="w-full sm:w-11/12 mx-auto px-4 sm:px-8">
             <div className="max-w-full md:max-w-[66.66667%] mx-auto">
               <ContentTitle size="xl">
                 A település első említése és névváltozatai
